@@ -35,3 +35,8 @@ model Configuracao {
   id              String @id @default("singleton")
   pontosPorRodada Int    @default(10)
 }
+
+model Categoria {
+  id   String @id @default(uuid())
+  nome String @unique
+}

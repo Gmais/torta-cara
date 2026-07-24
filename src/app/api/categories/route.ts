@@ -7,10 +7,32 @@ export async function GET() {
     const questions = await prisma.pergunta.findMany({
       select: { categoria: true }
     });
-    const uniqueCategories = Array.from(new Set(questions.map(q => q.categoria)));
+    const questionCats = questions.map(q => q.categoria);
+    
+    const dbCats = await prisma.categoria.findMany();
+    const dbCatNames = dbCats.map(c => c.nome);
+    
+    const uniqueCategories = Array.from(new Set([...questionCats, ...dbCatNames]));
     return NextResponse.json(uniqueCategories.sort());
   } catch (error) {
     return NextResponse.json({ error: 'Erro ao buscar categorias' }, { status: 500 });
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const { categoria } = await request.json();
+    if (!categoria) {
+      return NextResponse.json({ error: 'Nome da categoria é obrigatório' }, { status: 400 });
+    }
+    await prisma.categoria.upsert({
+      where: { nome: categoria },
+      update: {},
+      create: { nome: categoria }
+    });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    return NextResponse.json({ error: 'Erro ao criar categoria' }, { status: 500 });
   }
 }
 
@@ -18,14 +40,29 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const { oldName, newName } = await request.json();
-    if (!oldName || !newName) return NextResponse.json({ error: 'Nomes inválidos' }, { status: 400 });
-
-    const result = await prisma.pergunta.updateMany({
+    
+    // Atualiza tabela de perguntas
+    await prisma.pergunta.updateMany({
       where: { categoria: oldName },
       data: { categoria: newName }
     });
     
-    return NextResponse.json({ success: true, count: result.count });
+    // Atualiza tabela de categorias se existir, senao cria
+    try {
+      await prisma.categoria.update({
+        where: { nome: oldName },
+        data: { nome: newName }
+      });
+    } catch(e) {
+      // Se a categoria antiga nao existia na tabela nova, apenas cria a nova
+      await prisma.categoria.upsert({
+        where: { nome: newName },
+        update: {},
+        create: { nome: newName }
+      });
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: 'Erro ao renomear categoria' }, { status: 500 });
   }
@@ -35,14 +72,22 @@ export async function PUT(request: Request) {
 export async function DELETE(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const name = searchParams.get('name');
-    if (!name) return NextResponse.json({ error: 'Nome da categoria não fornecido' }, { status: 400 });
+    const categoria = searchParams.get('name');
+    if (!categoria) return NextResponse.json({ error: 'Nome da categoria não fornecido' }, { status: 400 });
 
-    const result = await prisma.pergunta.deleteMany({
-      where: { categoria: name },
+    // Deleta perguntas
+    await prisma.pergunta.deleteMany({
+      where: { categoria }
     });
     
-    return NextResponse.json({ success: true, count: result.count });
+    // Deleta categoria da tabela (se existir)
+    try {
+      await prisma.categoria.delete({
+        where: { nome: categoria }
+      });
+    } catch(e) {}
+    
+    return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: 'Erro ao excluir categoria' }, { status: 500 });
   }

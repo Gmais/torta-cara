@@ -22,6 +22,7 @@ interface Pergunta {
 export default function AdminPage() {
   const [turmas, setTurmas] = useState<Turma[]>([]);
   const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
+  const [listaCategorias, setListaCategorias] = useState<string[]>([]);
   
   const [novaTurma, setNovaTurma] = useState('');
   const [pontosPorRodada, setPontosPorRodada] = useState(10);
@@ -49,9 +50,16 @@ export default function AdminPage() {
     setLoading(false);
   };
 
+  const fetchCategorias = async () => {
+    const res = await fetch('/api/categories');
+    const data = await res.json();
+    setListaCategorias(data);
+  };
+
   useEffect(() => {
     fetchTurmas();
     fetchPerguntas();
+    fetchCategorias();
     fetchSettings();
   }, []);
 
@@ -102,7 +110,20 @@ export default function AdminPage() {
     if (confirm(`ATENÇÃO! Tem certeza que deseja excluir a categoria "${name}" e TODAS as suas perguntas? Essa ação não pode ser desfeita.`)) {
       await fetch(`/api/categories?name=${encodeURIComponent(name)}`, { method: 'DELETE' });
       fetchPerguntas();
+      fetchCategorias();
     }
+  };
+
+  const handleCriarCategoria = async () => {
+    const novaCat = prompt('Digite o nome da nova categoria:');
+    if (!novaCat || novaCat.trim() === '') return;
+    
+    await fetch('/api/categories', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ categoria: novaCat.trim() })
+    });
+    fetchCategorias();
   };
 
   const toggleCategoria = (name: string) => {
@@ -141,7 +162,8 @@ export default function AdminPage() {
     return acc;
   }, {} as Record<string, Pergunta[]>);
   
-  const categorias = Object.keys(categoriasMap).sort();
+  // Usa a lista global do banco para exibir até as categorias sem perguntas
+  const categorias = listaCategorias;
 
   if (loading) return <div className="p-8 text-center">Carregando...</div>;
 
@@ -210,10 +232,16 @@ export default function AdminPage() {
         {turmas.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>}
       </div>
 
-      <h2 style={{ marginTop: '4rem', marginBottom: '1.5rem' }}>Banco de Perguntas e Categorias</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4rem', marginBottom: '1.5rem' }}>
+        <h2 style={{ margin: 0 }}>Banco de Perguntas e Categorias</h2>
+        <Button onClick={handleCriarCategoria} style={{ background: 'var(--success)' }}>
+          + Nova Categoria
+        </Button>
+      </div>
+      
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {categorias.map(cat => {
-          const catPerguntas = categoriasMap[cat];
+          const catPerguntas = categoriasMap[cat] || [];
           const isExpanded = categoriasExpandidas.includes(cat);
           
           return (

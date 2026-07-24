@@ -37,6 +37,7 @@ export default function JogoPage() {
   const [mostrarResposta, setMostrarResposta] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadingPergunta, setLoadingPergunta] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Categorias para o filtro
   const [categorias, setCategorias] = useState<string[]>([]);
@@ -114,8 +115,11 @@ export default function JogoPage() {
   };
 
   const handlePontuar = async (turmaId: string, operacao: 'add' | 'sub') => {
+    if (isTransitioning) return;
     const turma = turmas.find(t => t.id === turmaId);
     if (!turma) return;
+    
+    setIsTransitioning(true);
     
     const novaPontuacao = operacao === 'add' 
       ? turma.pontuacao + pontosValendo 
@@ -133,6 +137,12 @@ export default function JogoPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pontuacao: novaPontuacao })
     });
+    
+    // Passa automaticamente para o próximo duelo após 1.5 segundos
+    setTimeout(() => {
+      proximoDuelo();
+      setIsTransitioning(false);
+    }, 1500);
   };
 
   const proximoDuelo = () => {
@@ -200,25 +210,25 @@ export default function JogoPage() {
           <Card style={{ background: 'linear-gradient(135deg, rgba(244,63,94,0.1), rgba(139,92,246,0.1))', border: '1px solid var(--primary)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {/* Equipe 1 */}
-              <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ flex: 1, textAlign: 'center', opacity: isTransitioning ? 0.5 : 1, transition: 'opacity 0.3s' }}>
                 <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma1.nome}</h2>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Button onClick={() => handlePontuar(turma1.id, 'add')} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
-                  <Button onClick={() => handlePontuar(turma1.id, 'sub')} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
+                  <Button onClick={() => handlePontuar(turma1.id, 'add')} disabled={isTransitioning} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
+                  <Button onClick={() => handlePontuar(turma1.id, 'sub')} disabled={isTransitioning} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
                 </div>
               </div>
 
               {/* VS */}
-              <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--accent)', margin: '0 2rem', fontStyle: 'italic' }}>
+              <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--accent)', margin: '0 2rem', fontStyle: 'italic', opacity: isTransitioning ? 0.5 : 1 }}>
                 VS
               </div>
 
               {/* Equipe 2 */}
-              <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ flex: 1, textAlign: 'center', opacity: isTransitioning ? 0.5 : 1, transition: 'opacity 0.3s' }}>
                 <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma2.nome}</h2>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
-                  <Button onClick={() => handlePontuar(turma2.id, 'add')} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
-                  <Button onClick={() => handlePontuar(turma2.id, 'sub')} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
+                  <Button onClick={() => handlePontuar(turma2.id, 'add')} disabled={isTransitioning} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
+                  <Button onClick={() => handlePontuar(turma2.id, 'sub')} disabled={isTransitioning} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
                 </div>
               </div>
             </div>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "vercel-build": "prisma generate && prisma db push && node prisma/seed.js && next build"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

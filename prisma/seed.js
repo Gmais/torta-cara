@@ -1,49 +1,26 @@
 const { PrismaClient } = require('@prisma/client')
 const fs = require('fs')
+const path = require('path')
 
 const prisma = new PrismaClient()
 
 async function main() {
-  const filePath = "C:\\Users\\User\\.gemini\\antigravity-ide\\brain\\073e1a2b-c81b-4694-ac34-a9fce6a3f1be\\browser\\scratchpad_lrgneatv.md";
+  const filePath = path.join(__dirname, 'perguntas.json');
   const content = fs.readFileSync(filePath, 'utf-8');
-
-  const lines = content.split('\n');
-  let currentCategory = '';
-  const questionsToInsert = [];
-
-  for (let line of lines) {
-    line = line.trim();
-    if (line.startsWith('### ')) {
-      currentCategory = line.replace('### ', '').replace(/^\d+\s/, '').trim();
-    } else if (line.match(/^\d+\./)) {
-      const match = line.match(/^\d+\.\s(.*?)\s+-\s+(.*)$/);
-      if (match) {
-        questionsToInsert.push({
-          pergunta: match[1].trim(),
-          resposta: match[2].trim(),
-          categoria: currentCategory,
-          nomeProfessor: "Sistema"
-        });
-      } else {
-        const vfMatch = line.match(/^\d+\.\s(.*?)\s+Resposta:\s+(.*)$/i);
-        if (vfMatch) {
-          questionsToInsert.push({
-            pergunta: vfMatch[1].trim(),
-            resposta: vfMatch[2].trim(),
-            categoria: currentCategory,
-            nomeProfessor: "Sistema"
-          });
-        }
-      }
-    }
-  }
+  const questionsToInsert = JSON.parse(content);
 
   console.log(`Encontradas ${questionsToInsert.length} perguntas. Inserindo no banco de dados...`);
 
-  for (const q of questionsToInsert) {
-    await prisma.pergunta.create({
-      data: q
-    });
+  // Count to check if we already seeded to avoid duplication on Vercel
+  const existingCount = await prisma.pergunta.count();
+  if (existingCount > 0) {
+    console.log(`O banco já possui ${existingCount} perguntas. Ignorando a inserção inicial.`);
+  } else {
+    for (const q of questionsToInsert) {
+      await prisma.pergunta.create({
+        data: q
+      });
+    }
   }
 
   await prisma.configuracao.upsert({

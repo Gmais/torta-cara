@@ -1,0 +1,2408 @@
+[
+  {
+    "pergunta": "Quem Deus mandou construir uma arca antes do dilúvio?",
+    "resposta": "Noé",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o primeiro livro da bíblia?",
+    "resposta": "Gênesis",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o homem mais sábio e rico que já existiu?",
+    "resposta": "Salomão",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o último livro da bíblia?",
+    "resposta": "Apocalipse",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem viu Jesus primeiro após a ressurreição?",
+    "resposta": "Maria Madalena",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome dos pais de Jesus?",
+    "resposta": "José e Maria",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o ser que tentou Eva?",
+    "resposta": "Uma serpente",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Onde Jesus nasceu?",
+    "resposta": "Belém",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome dos 3 reis magos?",
+    "resposta": "Baltazar, Belchior e Gaspar",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos discípulos Jesus tinha?",
+    "resposta": "12 discípulos",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome dos filhos de Isaque?",
+    "resposta": "Esaú e Jacó",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o profeta que batizou Jesus?",
+    "resposta": "João Batista",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Para onde os pais de Jesus fugiram quando ele era criança?",
+    "resposta": "Egito",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que animal engoliu o profeta Jonas?",
+    "resposta": "Um grande peixe",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Jesus transformou a água em que durante uma festa de casamento?",
+    "resposta": "Em vinho",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto tempo durou a chuva no dilúvio?",
+    "resposta": "40 dias",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual era o nome do jardim em que Adão e Eva moravam?",
+    "resposta": "Jardim do Éden",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o anjo que avisou a Maria sobre o nascimento de Jesus?",
+    "resposta": "Arcanjo Gabriel",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem Deus usou para libertar o povo de Israel do Egito?",
+    "resposta": "Moisés",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Com quantos pães e peixes Jesus fez a sua primeira multiplicação?",
+    "resposta": "Cinco pães e dois peixes",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o maior livro da Bíblia, em capítulos?",
+    "resposta": "Salmos",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem escreveu o livro do apocalipse?",
+    "resposta": "Apóstolo João",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Na Bíblia, quem contou a parábola da pérola de grande valor?",
+    "resposta": "Jesus",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual discípulo andou sobre as águas com Jesus?",
+    "resposta": "Pedro",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem escreveu a maioria das cartas do Novo Testamento?",
+    "resposta": "Paulo",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual profeta foi alimentado por corvos no deserto?",
+    "resposta": "Elias",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que cidade Jesus fez seu primeiro milagre?",
+    "resposta": "Caná da Galileia",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual era a profissão de Pedro antes de seguir Jesus?",
+    "resposta": "Pescador",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem negou Jesus três vezes antes do galo cantar?",
+    "resposta": "Pedro",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da mãe de João Batista?",
+    "resposta": "Isabel",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual monte Moisés recebeu os Dez Mandamentos?",
+    "resposta": "Monte Sinai",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi jogado na cova dos leões?",
+    "resposta": "Daniel",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos livros há no Novo Testamento?",
+    "resposta": "27",
+    "categoria": "Perguntas Bíblicas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é o nome das meninas superpoderosas?",
+    "resposta": "Docinho, Lindinha e Florzinha",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o personagem dos mares que parece uma esponja?",
+    "resposta": "Bob Esponja",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o urso que adora mel e é amigo do leitão?",
+    "resposta": "Ursinho Pooh",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do carro mais veloz de todos os desenhos?",
+    "resposta": "Relâmpago Mcqueen",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é o nome da bruxa do 71 no seriado chaves?",
+    "resposta": "Dona Clotilde",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama a mãe do Kiko?",
+    "resposta": "Dona Florinda",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a fruta preferida da magali?",
+    "resposta": "Melancia",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da peixinho que esquece tudo no filme procurando nemo?",
+    "resposta": "Dóris",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o marinheiro que adora espinafre?",
+    "resposta": "Popeye",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o vilão de peter pan?",
+    "resposta": "Capitão Gancho",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do fantasminha camarada?",
+    "resposta": "Gasparzinho",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que bicho come a vovozinha e os três porquinhos?",
+    "resposta": "Lobo Mau",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o passarinho que grita \"acho que vi um gatinho\"?",
+    "resposta": "Piu piu",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da família que usa roupa vermelha e todos são heróis?",
+    "resposta": "Os Incríveis",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é a dentuça mais querida das histórias em quadrinhos?",
+    "resposta": "Mônica",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do algodão que é doce?",
+    "resposta": "Algodão Doce",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do cachorro do mikey?",
+    "resposta": "Pluto",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "No filme toy story quem é o xerife cawboy?",
+    "resposta": "Woody",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da arara azul no filme rio?",
+    "resposta": "Blue",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que filme os animais fogem de um zoológico e vão parar em uma ilha deserta?",
+    "resposta": "Madagascar",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "No filme a era do gelo, qual animal gigante está em extinção?",
+    "resposta": "Mamute",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o ogro verde que casa com a ogra princesa Fiona?",
+    "resposta": "Shrek",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o lema de timão e pumba?",
+    "resposta": "Hakuna Matata",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do pato mais rico dos desenhos?",
+    "resposta": "Tio Patinhas",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o alimento preferido do Garfield?",
+    "resposta": "Lasanha",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual personagem é autor da frase “Não contavam com minha astúcia!”?",
+    "resposta": "Chapolim Colorado",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Nome da série cujos personagens principais são Sheldon, Raj, Leonard, Howard e Penny?",
+    "resposta": "The Big Bang Theory",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "De que série é a expressão \"valar morghulis\"?",
+    "resposta": "Game of Thrones",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que anos foram lançados os filmes da trilogia original de Star Wars?",
+    "resposta": "1977 - 1980 – 1983",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do personagem que pica árvores?",
+    "resposta": "Pica Pau",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são os dois filmes mais premiados da história do Oscar?",
+    "resposta": "Senhor dos Anéis: O Retorno do Rei – Titanic - Ben-Hur",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas temporadas tem a série Friends?",
+    "resposta": "10",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do principal vilão de Harry Potter?",
+    "resposta": "Voldermort",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do desenho que o gato corre atrás de um rato?",
+    "resposta": "Tom e Jerry",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o menino que grita gentalha no seriado chaves?",
+    "resposta": "Kiko",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do guarda do desenho de “manda-chuva”?",
+    "resposta": "Guarda-Belo",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é o nome da moeda do tio Patinhas?",
+    "resposta": "Moeda número 1",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o mestre das tartarugas ninjas?",
+    "resposta": "Rato Splinter",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome dos sobrinhos de pato Donald?",
+    "resposta": "Huguinho, Zezinho e Luizinho",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o personagem principal de \"Ratatouille\"?",
+    "resposta": "Remy",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do brinquedo cowboy in \"Toy Story\"?",
+    "resposta": "Woody",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do vilão principal em \"O Rei Leão\"?",
+    "resposta": "Scar",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é a irmã da Elsa em \"Frozen\"?",
+    "resposta": "Anna",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do peixinho que se perdeu em \"Procurando Nemo\"?",
+    "resposta": "Nemo",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a cor do vestido da Bela, em \"A Bela e a Fera\"?",
+    "resposta": "Amarelo",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama o boneco de neve criado por Elsa?",
+    "resposta": "Olaf",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o super-herói mais rápido da DC?",
+    "resposta": "Flash",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama o amigo fiel do Aladdin?",
+    "resposta": "Abu",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do leão em \"Madagascar\"?",
+    "resposta": "Alex",
+    "categoria": "Conhecimento sobre Séries, filmes e desenhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o verdadeiro nome do Super Homem na Terra?",
+    "resposta": "Clark Kent",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Onde o Super-Homem cresceu?",
+    "resposta": "Smallville",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o verdadeiro nome do Homem Aranha?",
+    "resposta": "Peter Park",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do martelo de Thor?",
+    "resposta": "Mjolnir",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o verdadeiro nome da Pantera Negra?",
+    "resposta": "T'Challa",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que música Baby Groot dança no final do primeiro Guardian of the Galaxy?",
+    "resposta": "'I Want You Back' - The Jackson 5",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama o parceiro do Batman?",
+    "resposta": "Robin",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a fraqueza do Caçador Marciano?",
+    "resposta": "Fogo",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que tipo de médico é Stephen Strange?",
+    "resposta": "Neurocirurgião",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o melhor amigo de Barry Allen, o flash?",
+    "resposta": "Cisco Ramón",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o último herói sobrevivente de Marte, membro da Liga da Justiça?",
+    "resposta": "Caçador Marciano/Caçador de Marte/John Jones",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Do que é feito o escudo do Capitão América?",
+    "resposta": "Vibranium",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi Stan Lee?",
+    "resposta": "Desenhista e presidente da Marvel Comics",
+    "categoria": "Marvel/DC Comics",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual povo pré-colombiano que ocupou a região onde hoje se localiza o México?",
+    "resposta": "Maias",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais os países que fazem parte do Nafta (North American Free Trade Agreement)?",
+    "resposta": "Canadá, EUA e México",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a capital de Bahamas?",
+    "resposta": "Nassau",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do artist que pintou o quadro “O Grito do Ipiranga” ou “Independência ou Morte”?",
+    "resposta": "Pedro Américo",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o título de nobreza pelo qual ficou conhecido Irineu Evangelista de Souza?",
+    "resposta": "Visconde de Mauá ou Barão de Mauá",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o principal minério de exportação do México para os EUA?",
+    "resposta": "Petróleo",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Geograficamente falando, qual continente se localiza o México?",
+    "resposta": "América do Norte",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual lei que acabou definitivamente com a escravidão no Brasil?",
+    "resposta": "Lei Áurea",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "É considerado por muitos historiadores como um dos primeiros passos rumo à Independência do Brasil. Qual evento foi esse?",
+    "resposta": "Abertura dos Portos em 1808",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual país onde foi construído um canal que liga os oceanos Atlântico e Pacífico?",
+    "resposta": "Panamá",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos estados existem no Brasil?",
+    "resposta": "26 estados + Distrito Federal",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da teoria mais aceita para a ocupação do território americano?",
+    "resposta": "Teoria do Estreito de Bering",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Do ponto de vista europeu, quando foi ‘descoberto’ o continente Americano?",
+    "resposta": "1492",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais países fazem parte da América Anglo-Saxônica?",
+    "resposta": "Estados Unidos e Canadá",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a moeda oficial do México?",
+    "resposta": "Peso Mexicano",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a capital do Canadá?",
+    "resposta": "Ottawa",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a capital do México?",
+    "resposta": "Cidade do México",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que está escrito na bandeira de Minas Gerais?",
+    "resposta": "Liberdade ainda que tardia / LIBERTAS QUÆ SERA TAMEN",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais países fazem parte da América do Norte?",
+    "resposta": "Estados Unidos, Canadá e México",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a capital dos EUA?",
+    "resposta": "Washington D.C.",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que representam as faixas e as estrelas na bandeira dos EUA?",
+    "resposta": "As faixas representam cada uma das antigas 13 colônias e as estrelas representam cada um dos 50 atuais estados do país.",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual feriado comemoramos no dia 07 de setembro?",
+    "resposta": "Independência do Brasil",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Na rosa dos ventos, qual ponto indica a direção Setentrional?",
+    "resposta": "Norte",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que país fica a Torre Eiffel?",
+    "resposta": "França",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é conhecido a cadeia de montanhas localizada ao Oeste do continente americano?",
+    "resposta": "Cordilheira dos Andes",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O trecho “Já raiou a liberdade no horizonte do Brasil” foi retirado de qual hino?",
+    "resposta": "Hino da Independência",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem proclamou a Independência do Brasil?",
+    "resposta": "Dom Pedro de Alcântara",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a capital da Austrália?",
+    "resposta": "Camberra",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o menor país do mundo?",
+    "resposta": "Vaticano",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o primeiro presidente do Brasil?",
+    "resposta": "Deodoro da Fonseca",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem descobriu o Brasil?",
+    "resposta": "Pedro Álvares Cabral",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano foi proclamada a independência do Brasil?",
+    "resposta": "1822",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o primeiro imperador do Brasil?",
+    "resposta": "Dom Pedro I",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual país tem o formato de uma bota?",
+    "resposta": "Itália",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o rio mais longo do mundo?",
+    "resposta": "Rio Amazonas",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que continente fica o Egito?",
+    "resposta": "África",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem construiu a Muralha da China?",
+    "resposta": "Imperador Qin Shi Huang",
+    "categoria": "História/geografia – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é: cai em pé e corre deitado?",
+    "resposta": "Chuva",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior mamífero terrestre?",
+    "resposta": "Elefante Africano",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior mamífero aquático?",
+    "resposta": "Baleia Azul",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior osso do corpo humano?",
+    "resposta": "Fêmur",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quando é que o nariz do Pinóquio cresce?",
+    "resposta": "Quando ele Mente",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual cidade fica o Cristo Redentor?",
+    "resposta": "No Rio de Janeiro",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual mês do ano tem 28 dias?",
+    "resposta": "Todos",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas cores tem o arco-íris?",
+    "resposta": "Sete",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são as cores do arco-íris?",
+    "resposta": "Vermelho, laranja, amarelo, verde, azul, índigo ou anil e violeta",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas letras tem o alfabeto?",
+    "resposta": "26 letras",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a fruta envenenada que a Branca de Neve comeu?",
+    "resposta": "Maçã",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que nasce grande e morre pequeno?",
+    "resposta": "O Lápis",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o céu que não tem estrelas?",
+    "resposta": "O Céu da Boca",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da profissão de quem apaga incêndios?",
+    "resposta": "Bombeiro",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual mês vem depois de Abril?",
+    "resposta": "Maio",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A primavera acontece depois de qual estação do ano?",
+    "resposta": "Do Inverno",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o alimento que as abelhas fabricam?",
+    "resposta": "Mel",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos meses tem 1 ano?",
+    "resposta": "12 meses",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são as estações do ano?",
+    "resposta": "Outono, inverno, primavera e verão",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é a boneca de pano mais famosa do Brasil?",
+    "resposta": "A Emília, a personagem de Monteiro Lobato",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que a lua é para a terra?",
+    "resposta": "Um satélite natural",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Um ano bissexto tem quantos dias?",
+    "resposta": "366",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A mistura das cores vermelho e branco forma qual cor?",
+    "resposta": "A Cor Rosa",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é o nome da história da menina que usava um capuz vermelho?",
+    "resposta": "Chapeuzinho Vermelho",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é o que é: fica maior quanto mais você tira?",
+    "resposta": "O Buraco",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são os principais ingredientes do slime?",
+    "resposta": "Cola e Água",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "De qual fruta é produzido o chocolate?",
+    "resposta": "Do Cacau",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é que é: é branco, mas se cair, fica amarelo?",
+    "resposta": "O Ovo",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o animal que, segundo os contos de fada, quando é beijado se transforma em um príncipe?",
+    "resposta": "O Sapo",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o personagem do folclore brasileiro conhecido só ter uma perna?",
+    "resposta": "O Saci-Pererê",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos dias tem um ano?",
+    "resposta": "365 dias",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O irmão do seu avô é o que seu?",
+    "resposta": "Tio-avô",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o animal que anda com as pernas na cabeça?",
+    "resposta": "O Piolho",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é que sabe todas as palavras, mas nunca diz nenhuma?",
+    "resposta": "O Dicionário",
+    "categoria": "Infantil – Perguntas e Charadas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da maior lua de Júpiter?",
+    "resposta": "Ganimedes",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos países têm o português como oficial?",
+    "resposta": "10 países",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos planetas existem no sistema solar?",
+    "resposta": "8 planetas",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são os planetas presentes no nosso Sistema Solar, em ordem de proximidade com o Sol?",
+    "resposta": "Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem pintou o quadro Monalisa?",
+    "resposta": "Leonardo Da Vinci",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos países fazem parte de América Latina?",
+    "resposta": "21",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do corpo celeste que emana luz própria?",
+    "resposta": "Estrela",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior país do mundo em território?",
+    "resposta": "Rússia",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o país mais populoso do mundo?",
+    "resposta": "Índia",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas estrelas existem no sistema solar?",
+    "resposta": "Uma estrela, o sol",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto tempo leva para a terra completar uma volta em torno de si mesma?",
+    "resposta": "Cerca de 24 horas",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual pólo do planeta fica localizada a Antártica?",
+    "resposta": "No pólo sul",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior planeta do sistema solar?",
+    "resposta": "Júpiter",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual mês começa o inverno no hemisfério sul do planeta?",
+    "resposta": "Julho",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do planeta que é famoso por ter vários anéis?",
+    "resposta": "Saturno",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior oceano do planeta terra?",
+    "resposta": "Oceano Pacífico",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o menor país do mundo?",
+    "resposta": "Vaticano",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas estrelas fazem parte da constelação Cruzeiro do Sul?",
+    "resposta": "Cinco estrelas",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o primeiro presidente da república do Brasil?",
+    "resposta": "Marechal Deodoro da Fonseca",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome de um conjunto de lobos?",
+    "resposta": "Alcateia",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto mede um hectare?",
+    "resposta": "10 mil quilômetros quadrados",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o inseto transmissor da doença de Chagas?",
+    "resposta": "Barbeiro",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do autor do livro “A arte da guerra”?",
+    "resposta": "Sun Tzu",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A quantos graus celsius a água precisa estar para começar a ferver?",
+    "resposta": "100º Celsius",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a velocidade da luz?",
+    "resposta": "300 mil quilômetros por segundo",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Caso um adulto não perca nenhum dos dentes, quantos ele possui?",
+    "resposta": "32 dentes",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são as quatro operações fundamentais da matemática?",
+    "resposta": "Adição, subtração, divisão e multiplicação",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Um quilômetro possui quantos centímetros?",
+    "resposta": "Cem mil centímetros",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que um mapa topográfico representa?",
+    "resposta": "As altitudes de um relevo",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto tempo a lua demora para dar uma volta ao redor da terra?",
+    "resposta": "27 dias e 8 horas",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do espaço que foi modificado pela ação humana?",
+    "resposta": "Espaço geográfico",
+    "categoria": "Conhecimento Escolar - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual país venceu a Copa do Mundo de 2022?",
+    "resposta": "Argentina",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o maior artilheiro da história das Copas?",
+    "resposta": "Miroslav Klose",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que esporte se usa uma bola laranja?",
+    "resposta": "Basquete",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos jogadores tem um time de vôlei?",
+    "resposta": "Seis",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o esporte mais popular do Brasil?",
+    "resposta": "Futebol",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o primeiro brasileiro campeão da Fórmula 1?",
+    "resposta": "Emerson Fittipaldi",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que país foram realizados os Jogos Olímpicos de 2016?",
+    "resposta": "Brasil",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos anéis tem o símbolo das Olimpíadas?",
+    "resposta": "Cinco",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o maior campeão da Fórmula 1?",
+    "resposta": "Lewis Hamilton e Michael Schumacher (7 títulos cada)",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome da liga de basquete dos Estados Unidos?",
+    "resposta": "NBA",
+    "categoria": "Esportes - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior órgão do corpo humano?",
+    "resposta": "Pele",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos ossos tem o corpo humano adulto?",
+    "resposta": "206",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que gás os humanos respiram para sobreviver?",
+    "resposta": "Oxigênio",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do processo pelo qual as plantas produzem seu próprio alimento?",
+    "resposta": "Fotossíntese",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o planeta mais quente do Sistema Solar?",
+    "resposta": "Vênus",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que invenção revolucionou a comunicação no século XIX?",
+    "resposta": "Telefone",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem criou a Teoria da Relatividade?",
+    "resposta": "Albert Einstein",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que gás faz os balões de festa flutuarem?",
+    "resposta": "Hélio",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual animal é conhecido por dormir de cabeça para baixo?",
+    "resposta": "Morcego",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem inventou a lâmpada elétrica?",
+    "resposta": "Thomas Edison",
+    "categoria": "Ciências e Tecnologias - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o adoçante natural produzido pelas abelhas?",
+    "resposta": "Mel",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto anos tem um século?",
+    "resposta": "100",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos anões fazem parte da história da Branca de Neve?",
+    "resposta": "7",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o animal que é considerado o rei da selva?",
+    "resposta": "Leão",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que a Cinderela perdeu quando saiu do baile?",
+    "resposta": "Um sapatinho de cristal",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a estação mais quente do ano?",
+    "resposta": "Verão",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual país foi lançado o primeiro parque da Disney?",
+    "resposta": "Estados Unidos",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é açaí?",
+    "resposta": "Uma Fruta",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Do que é feito o omelete?",
+    "resposta": "De ovo",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama a personagem principal do filme Frozen?",
+    "resposta": "Elsa",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o personagem do folclore brasileiro quem tem os dois pés virados para trás?",
+    "resposta": "Curupira",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o mês das festas juninas?",
+    "resposta": "junho",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem eram os povos que habitavam o Brasil quando os portugueses chegaram?",
+    "resposta": "Indígenas",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o feminino de elefante?",
+    "resposta": "Elefanta",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se diz 'cachorro' em inglês?",
+    "resposta": "Dog",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual animal é o Bob Esponja?",
+    "resposta": "Esponja-do-mar",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como as batatas nascem?",
+    "resposta": "Na Terra",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Onde as formigas vivem?",
+    "resposta": "Em Formigueiros",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como nascem os pássaros?",
+    "resposta": "De um Ovo",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em quantas regiões é dividido o Brasil?",
+    "resposta": "5",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o país conhecido por ter o formato de uma bota?",
+    "resposta": "Itália",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como é chamada uma esfera em duas dimensões?",
+    "resposta": "Círculo",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são as cores primárias?",
+    "resposta": "Azul, Vermelho e Amarelo",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a única palavra do português na qual o \"S\" do plural não fica no fim?",
+    "resposta": "Qualquer (plural: quaisquer)",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o maior planeta do sistema solar?",
+    "resposta": "Júpiter",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o metal mais precioso do mundo?",
+    "resposta": "Ródio",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o animal mais rápido do mundo?",
+    "resposta": "Falcão-peregrino",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem pintou a Mona Lisa?",
+    "resposta": "Leonardo da Vinci",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que país nasceu o samba?",
+    "resposta": "Brasil",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas cores tem o arco-íris?",
+    "resposta": "Sete",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o maior mamífero do mundo?",
+    "resposta": "Baleia-azul",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que país fica a Estátua da Liberdade?",
+    "resposta": "Estados Unidos",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que mede a escala Richter?",
+    "resposta": "Terremotos",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a capital do Japão?",
+    "resposta": "Tóquio",
+    "categoria": "Conhecimentos gerais - Básico",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O ornitorrinco é o único mamífero que bota ovos.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto mais fermento se adiciona na massa, mais cresce o bolo.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Cavalos não conseguem vomitar.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Vegetarianos podem comer presunto.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O Queijo Minas Frescal e o Bolo de rolo de Pernambuco são considerados Patrimônio Cultural Brasileiro.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Antes de ser narrador, Galvão Bueno foi jogador de futebol.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "No Brasil, as mulheres podem votar desde 1932.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Vermelho e azul misturado formam a cor roxa.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Barcelona é a capital da Espanha.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O México é um país localizado na América Central.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Gelatina é feita de ossos, ligamentos e tecidos de vacas e porcos, principalmente.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Barack Obama foi o primeiro presidente negro a governar um país.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Todo quadrado é um retângulo.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O Maranhão é um estado do norte brasileiro.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Fernando Pessoa foi um escritor brasileiro.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Inglaterra, Irlanda, Escócia e País de Gales compõem os países do Reino Unido.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Ano-luz é uma unidade de distância.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A Guerra Fria aconteceu entre Estados Unidos da América e a União Soviética.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A pintura é arte chamada de \"sétima arte\".",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Sydney é a capital da Austrália.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "2 + 2, 2 x 2 e 2² dão o mesmo resultado.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A Ditadura Militar no Brasil foi um período que se estendeu de 1964 até 1985.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Dom Casmurro é a mais conhecida dentre as obras de Machado de Assis.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quando estamos no ápice do verão no Hemisfério Sul, estamos no ápice do inverno no Hemisfério Norte.",
+    "resposta": "Verdadeiro",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O Brasil tem um sistema de governo parlamentarista.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O filme Avatar já ganhou Oscar de melhor filme.",
+    "resposta": "Falso",
+    "categoria": "Verdadeiro ou Falso - Intermediário",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são as cores das lixeiras de reciclagem de papel, vidro, metal e plástico, respectivamente?",
+    "resposta": "Azul, verde, amarelo e vermelho.",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual país foi construído o campo de concentração de Auschwitz, maior da Alemanha Nazista?",
+    "resposta": "Polônia",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas pedras têm o jogo de dominó?",
+    "resposta": "28",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são, respectivamente, o maior e o mais populoso país do mundo?",
+    "resposta": "Rússia e China",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a religião que mais cresce no Brasil?",
+    "resposta": "Protestantismo",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual foi o matemático e geógrafo que calculou o perímetro da Terra em 240 a.C.?",
+    "resposta": "Erastótenes",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos lados têm uma bola?",
+    "resposta": "2 o de dentro e o de fora",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o País que presenteou os Estados Unidos com a estátua da liberdade?",
+    "resposta": "França",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a cor da esperança?",
+    "resposta": "Verde",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas folhas têm o trevo da sorte?",
+    "resposta": "Quatro",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a capital do Irã?",
+    "resposta": "Teerã",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é moranga?",
+    "resposta": "Abóbora",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o líder do quilombo do palmares?",
+    "resposta": "Zumbi",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o país da América do Sul que mais produz vinho?",
+    "resposta": "Argentina",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos ossos tem um bebê recém-nascido?",
+    "resposta": "276 ossos",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos litros de sangue tem uma pessoa adulta?",
+    "resposta": "4 a 6 litros",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual país foi inventado o chuveiro elétrico?",
+    "resposta": "Brasil",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o pensador condenado pela Igreja por afirmar que o planeta Terra gira em torno do Sol?",
+    "resposta": "Galileu Galilei",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi último presidente militar no Brasil?",
+    "resposta": "João Batista Figueiredo",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome do especialista que cuida dos pés?",
+    "resposta": "Podólogo",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi o filósofo conhecido por afirmar que Deus está morto?",
+    "resposta": "Friedrich Nietzsche",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o autor do livro “Macunaíma”?",
+    "resposta": "Mário de Andrade",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que estado brasileiro fica a cidade de farroupilha?",
+    "resposta": "Rio Grande do Sul",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como se chama cada um dos lados de uma folha de livros?",
+    "resposta": "Página",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o nome da ponte que liga Rio de Janeiro a Niterói?",
+    "resposta": "Rio-Niterói",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O pinguim é coberto de?",
+    "resposta": "Pêlos",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é um fagote?",
+    "resposta": "Instrumento de Sopro",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que lugar da Ásia o português é língua oficial?",
+    "resposta": "Macau",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o menor país do mundo?",
+    "resposta": "Vaticano",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que língua se fala em Moçambique?",
+    "resposta": "Português",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual cidade se encontra o Taj Mahal?",
+    "resposta": "Agra",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantas são as línguas oficiais da África do Sul?",
+    "resposta": "11",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi Tarsila do Amaral?",
+    "resposta": "Pintora",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a montanha mais alta do Brasil?",
+    "resposta": "Pico da Neblina",
+    "categoria": "Conhecimento geral - Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Que líder mundial ficou conhecida como \"Dama de Ferro\"?",
+    "resposta": "Margaret Thatcher",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais são os países que mais têm recebido refugiados sírios?",
+    "resposta": "Turquia e Líbano",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a principal função da ONU?",
+    "resposta": "Unir as nações com o objetivo de manter a paz e a segurança mundial",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano se deu a queda do muro de Berlim?",
+    "resposta": "1989",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que período aconteceu a Segunda Guerra Mundial?",
+    "resposta": "1939 - 1945",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos países há na União Europeia?",
+    "resposta": "28",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a forma de governo de Mônaco?",
+    "resposta": "Monarquia Parlamentarista",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quais foram as super-potências envolvidas na Guerra Fria?",
+    "resposta": "Estados Unidos e União Soviética",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que cidade fica a sede das Nações Unidas (ONU)?",
+    "resposta": "Nova York",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome da revolução que alavancou a independência do Brasil?",
+    "resposta": "Revolução Pernambucana",
+    "categoria": "Política/História – Intermediário/Difícil",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que está no meio do ovo?",
+    "resposta": "A Letra",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o doce preferido do átomo?",
+    "resposta": "Pé de Moléculas",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que são dois pontinhos pretos vistos no microscópio?",
+    "resposta": "Um Pretozoário e uma Blacktéria",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual o vinho que não possui álcool?",
+    "resposta": "Ovinho de Codorna",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que nasce grande e morre pequeno?",
+    "resposta": "O Lápis",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é um pontinho marrom no meio do pulmão?",
+    "resposta": "Uma Brownquite",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual a parte do corpo que cheira bacalhau?",
+    "resposta": "O Nariz",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é um pontinho vermelho no meio da porta?",
+    "resposta": "Um olho mágico com conjuntivite",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o fim da picada?",
+    "resposta": "Quando o mosquito se cansa e vai embora",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Por que as estrelas não fazem “miau”?",
+    "resposta": "Porque astro-no-mia",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o animal mais antigo do mundo?",
+    "resposta": "A zebra, porque ela é em preto e branco",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Por que a vaca foi para o espaço?",
+    "resposta": "Porque ela quis encontrar o vácuo",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Como o elétron atende o telefone?",
+    "resposta": "Próton",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o céu que não tem estrelas?",
+    "resposta": "O céu da boca",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a comida que tem a função de liga e desliga?",
+    "resposta": "Strog-ON-OFF",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que um canibal vegetariano come?",
+    "resposta": "A batata da perna e a planta do pé",
+    "categoria": "Perguntas com Trocadilhos",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é cheio de furinhos, mas ainda assim segura água?",
+    "resposta": "Esponja",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Tem dentes, mas não morde.",
+    "resposta": "Pente",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Quanto mais se tira, maior fica.",
+    "resposta": "Buraco",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Sempre sobe, mas nunca desce.",
+    "resposta": "Idade",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Pode ser grande ou pequeno, mas sempre cabe um burro dentro.",
+    "resposta": "Buraco",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Se você disser meu nome, eu desapareço.",
+    "resposta": "Silêncio",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Tem chifre, mas não é boi, dá leite, mas não é vaca.",
+    "resposta": "Cabra",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Fica no meio do ovo.",
+    "resposta": "Letra \"V\"",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Não tem pernas, mas corre.",
+    "resposta": "Rio",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Se divide ao meio e continua inteiro.",
+    "resposta": "Amendoim",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Todo mundo pisa, mas ninguém quer comer.",
+    "resposta": "Chiclete no chão",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que é, o que é? Tem pescoço, mas não tem cabeça.",
+    "resposta": "Garrafa",
+    "categoria": "Charadas e Perguntas Divertidas",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o Pokémon número 25 na Pokédex?",
+    "resposta": "Pikachu",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o tipo do Squirtle?",
+    "resposta": "Água",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Bulbasaur tem uma planta nas costas?",
+    "resposta": "Sim",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon parece um sapo com planta?",
+    "resposta": "Bulbasaur",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o tipo do Onix?",
+    "resposta": "Pedra",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Charmander solta fogo pela...",
+    "resposta": "Cauda",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o Pokémon inicial de água na primeira geração?",
+    "resposta": "Squirtle",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon é conhecido como “rato elétrico”?",
+    "resposta": "Pikachu",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O que o Jigglypuff usa para cantar?",
+    "resposta": "Microfone",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o rival do Ash na primeira temporada?",
+    "resposta": "Gary",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon tem formato de cobra?",
+    "resposta": "Ekans",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Gyarados é a evolução de quem?",
+    "resposta": "Magikarp",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o tipo do Charmander?",
+    "resposta": "Fogo",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon dorme muito e bloqueia estradas?",
+    "resposta": "Snorlax",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem são os vilões que tentam capturar o Pikachu?",
+    "resposta": "Equipe Rocket",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o Pokémon inicial de grama na primeira geração?",
+    "resposta": "Bulbasaur",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Meowth sabe falar?",
+    "resposta": "Sim",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon usa ataques de água?",
+    "resposta": "Squirtle",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Raichu é a evolução de quem?",
+    "resposta": "Pikachu",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon se parece com um dragão azul?",
+    "resposta": "Gyarados",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o professor que entrega os Pokémon iniciais para Ash?",
+    "resposta": "Professor Carvalho",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon é um inseto que vira borboleta?",
+    "resposta": "Caterpie",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Pidgeotto é um Pokémon do tipo...",
+    "resposta": "Voador",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Charmander é um...",
+    "resposta": "Lagarto de fogo",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem sempre diz “Preparem-se para encrenca”?",
+    "resposta": "Equipe Rocket",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do Pikachu fêmea de Ash?",
+    "resposta": "Não tem, é sempre o mesmo Pikachu",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Misty gosta de qual tipo de Pokémon?",
+    "resposta": "Água",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Brock é especialista em qual tipo de Pokémon?",
+    "resposta": "Pedra",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem é o parceiro do James na Equipe Rocket?",
+    "resposta": "Jessie",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Charmander, Charmeleon e Charizard são do tipo...",
+    "resposta": "Fogo",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon evolui para Butterfree?",
+    "resposta": "Caterpie",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon inicial parece um crocodilo azul?",
+    "resposta": "Totodile",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Pikachu adora comer...",
+    "resposta": "Ketchup",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Snorlax é conhecido por...",
+    "resposta": "Dormir",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Team Rocket tem um balão em forma de...",
+    "resposta": "Meowth",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon solta pólen que faz dormir?",
+    "resposta": "Butterfree",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon é conhecido como “pássaro lendário de fogo”?",
+    "resposta": "Moltres",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O ataque mais famoso do Pikachu é...",
+    "resposta": "Choque do Trovão",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O tipo do Zapdos é...",
+    "resposta": "Elétrico/Voador",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Chikorita é de qual tipo?",
+    "resposta": "Planta",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual Pokémon é amarelo e tem bochechas vermelhas?",
+    "resposta": "Pikachu",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem são os três Pokémon iniciais da primeira geração?",
+    "resposta": "Bulbasaur, Charmander e Squirtle",
+    "categoria": "Perguntas sobre Pokémon",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto é 7 × 8?",
+    "resposta": "56",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a metade de 1.000?",
+    "resposta": "500",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Se um triângulo tem dois lados iguais, como ele é chamado?",
+    "resposta": "Isósceles",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos segundos há em 5 minutos?",
+    "resposta": "300 segundos",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto é 25% de 200?",
+    "resposta": "50",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o valor de π (pi) arredondado para duas casas decimais?",
+    "resposta": "3,14",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quantos lados tem um heptágono?",
+    "resposta": "7",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Se um relógio marca 10h15, quantos graus o ponteiro das horas percorreu desde a meia-noite?",
+    "resposta": "127,5 graus",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quanto é 12²?",
+    "resposta": "144",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o único número primo par?",
+    "resposta": "2",
+    "categoria": "Charadas e Perguntas Divertidas (Matemática)",
+    "nomeProfessor": "Sistema"
+  }
+]

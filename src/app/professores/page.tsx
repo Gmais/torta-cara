@@ -68,9 +68,6 @@ export default function ProfessoresPage() {
     <div className="p-8 max-w-2xl mx-auto animate-fade-in">
       <div className="flex justify-between items-center mb-8">
         <h1>Área do Professor</h1>
-        <Link href="/">
-          <Button variant="secondary">Voltar</Button>
-        </Link>
       </div>
 
       <Card>

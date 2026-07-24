@@ -1,9 +1,16 @@
+"use client";
+
 import Link from 'next/link';
 import { Button } from '@/components/Button/Button';
 import { Card } from '@/components/Card/Card';
 import { FaPlay, FaChalkboardTeacher, FaUserEdit, FaCogs } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [url, setUrl] = useState('');
+  useEffect(() => {
+    setUrl(window.location.origin);
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
       <div className="max-w-4xl w-full animate-fade-in">
@@ -42,6 +49,19 @@ export default function Home() {
               <Link href="/professores" style={{ width: '100%' }}>
                 <Button style={{ width: '100%', background: 'var(--success)' }}>Cadastrar Perguntas</Button>
               </Link>
+              
+              {url && (
+                <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', width: '100%' }}>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 'bold' }}>Acesso Direto (Celular):</p>
+                  <img 
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url + '/professores')}&color=255-255-255&bgcolor=15-23-42`} 
+                    alt="QR Code Professor" 
+                    width={120} 
+                    height={120} 
+                    style={{ margin: '0 auto', borderRadius: '8px' }} 
+                  />
+                </div>
+              )}
             </div>
           </Card>
 

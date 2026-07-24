@@ -10,6 +10,7 @@ interface Turma {
   nome: string;
   pontuacao: number;
   competicao?: { id: string; nome: string };
+  alunos: { id: string; nome: string }[];
 }
 
 interface Competicao {
@@ -42,8 +43,12 @@ export default function JogoPage() {
   const [dueloIndex, setDueloIndex] = useState(0);
   const [pontosValendo, setPontosValendo] = useState(10);
   const [historico, setHistorico] = useState<{turmaId: string, delta: number}[]>([]);
+  const [alunosSorteados, setAlunosSorteados] = useState<Record<string, string[]>>({});
   
   // Estado Local (Não persistido)
+  const [representanteT1, setRepresentanteT1] = useState<string | null>(null);
+  const [representanteT2, setRepresentanteT2] = useState<string | null>(null);
+  
   const [perguntaAtual, setPerguntaAtual] = useState<Pergunta | null>(null);
   const [mostrarResposta, setMostrarResposta] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -77,6 +82,7 @@ export default function JogoPage() {
           setRodada(parsed.rodada || 1);
           setPontosValendo(parsed.pontosValendo || 10);
           if (parsed.historico) setHistorico(parsed.historico);
+          if (parsed.alunosSorteados) setAlunosSorteados(parsed.alunosSorteados);
           
           if (parsed.competicaoAtiva) {
             setupGameForCompetition(classes, parsed.competicaoAtiva, parsed.dueloIndex || 0);
@@ -113,10 +119,36 @@ export default function JogoPage() {
         dueloIndex,
         pontosValendo,
         historico,
-        competicaoAtiva
+        competicaoAtiva,
+        alunosSorteados
       }));
     }
-  }, [rodada, dueloIndex, pontosValendo, historico, competicaoAtiva, loading]);
+  }, [rodada, dueloIndex, pontosValendo, historico, competicaoAtiva, alunosSorteados, loading]);
+
+  const sortearAluno = (turma: Turma, setRepresentante: (nome: string) => void) => {
+    if (!turma.alunos || turma.alunos.length === 0) {
+      alert(`A turma ${turma.nome} não tem alunos cadastrados!`);
+      return;
+    }
+    const sorteados = alunosSorteados[turma.id] || [];
+    let disponiveis = turma.alunos.filter(a => !sorteados.includes(a.id));
+    
+    let novosSorteados = [...sorteados];
+    
+    // Se todos já foram, reseta a lista para não travar
+    if (disponiveis.length === 0) {
+      disponiveis = turma.alunos;
+      novosSorteados = [];
+    }
+    
+    const sorteado = disponiveis[Math.floor(Math.random() * disponiveis.length)];
+    setRepresentante(sorteado.nome);
+    
+    setAlunosSorteados(prev => ({
+      ...prev,
+      [turma.id]: [...novosSorteados, sorteado.id]
+    }));
+  };
 
   const handleSortear = async () => {
     setLoadingPergunta(true);
@@ -186,6 +218,8 @@ export default function JogoPage() {
   const proximoDuelo = async () => {
     setPerguntaAtual(null);
     setMostrarResposta(false);
+    setRepresentanteT1(null);
+    setRepresentanteT2(null);
     
     // Limpa a pergunta na API do apresentador
     fetch('/api/settings', {
@@ -206,6 +240,8 @@ export default function JogoPage() {
   const dueloAnterior = async () => {
     setPerguntaAtual(null);
     setMostrarResposta(false);
+    setRepresentanteT1(null);
+    setRepresentanteT2(null);
     
     // Limpa a pergunta na API do apresentador
     fetch('/api/settings', {
@@ -261,8 +297,11 @@ export default function JogoPage() {
       setRodada(1);
       setDueloIndex(0);
       setHistorico([]);
+      setAlunosSorteados({});
       setPerguntaAtual(null);
       setMostrarResposta(false);
+      setRepresentanteT1(null);
+      setRepresentanteT2(null);
       
       // Limpa a pergunta na API do apresentador
       await fetch('/api/settings', {
@@ -359,7 +398,21 @@ export default function JogoPage() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {/* Equipe 1 */}
               <div style={{ flex: 1, textAlign: 'center', opacity: isTransitioning ? 0.5 : 1, transition: 'opacity 0.3s' }}>
-                <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma1.nome}</h2>
+                <div 
+                  onClick={() => sortearAluno(turma1, setRepresentanteT1)} 
+                  style={{ cursor: 'pointer', display: 'inline-block', transition: 'all 0.2s', padding: '1rem', borderRadius: '8px' }}
+                  title="Clique para sortear representante"
+                  onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                  onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                >
+                  <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma1.nome}</h2>
+                  {representanteT1 && (
+                    <div className="animate-fade-in" style={{ color: 'var(--success)', fontWeight: 'bold', fontSize: '1.2rem', marginTop: '0.5rem' }}>
+                      👤 {representanteT1}
+                    </div>
+                  )}
+                  {!representanteT1 && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, marginTop: '0.5rem' }}>Toque para sortear</p>}
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
                   <Button onClick={() => handlePontuar(turma1.id, 'add')} disabled={isTransitioning} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
                   <Button onClick={() => handlePontuar(turma1.id, 'sub')} disabled={isTransitioning} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
@@ -378,7 +431,21 @@ export default function JogoPage() {
 
               {/* Equipe 2 */}
               <div style={{ flex: 1, textAlign: 'center', opacity: isTransitioning ? 0.5 : 1, transition: 'opacity 0.3s' }}>
-                <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma2.nome}</h2>
+                <div 
+                  onClick={() => sortearAluno(turma2, setRepresentanteT2)} 
+                  style={{ cursor: 'pointer', display: 'inline-block', transition: 'all 0.2s', padding: '1rem', borderRadius: '8px' }}
+                  title="Clique para sortear representante"
+                  onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                  onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                >
+                  <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma2.nome}</h2>
+                  {representanteT2 && (
+                    <div className="animate-fade-in" style={{ color: 'var(--success)', fontWeight: 'bold', fontSize: '1.2rem', marginTop: '0.5rem' }}>
+                      👤 {representanteT2}
+                    </div>
+                  )}
+                  {!representanteT2 && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, marginTop: '0.5rem' }}>Toque para sortear</p>}
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
                   <Button onClick={() => handlePontuar(turma2.id, 'add')} disabled={isTransitioning} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
                   <Button onClick={() => handlePontuar(turma2.id, 'sub')} disabled={isTransitioning} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>

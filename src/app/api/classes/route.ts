@@ -6,6 +6,7 @@ export async function GET() {
     const classes = await prisma.turma.findMany({
       include: {
         _count: { select: { alunos: true } },
+        alunos: { select: { id: true, nome: true } },
         competicao: { select: { id: true, nome: true } }
       },
       orderBy: { nome: 'asc' }

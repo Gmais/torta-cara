@@ -9,10 +9,12 @@ datasource db {
 }
 
 model Turma {
-  id        String        @id @default(uuid())
-  nome      String        @unique
-  pontuacao Int           @default(0)
-  alunos    Participante[]
+  id           String        @id @default(uuid())
+  nome         String        @unique
+  pontuacao    Int           @default(0)
+  alunos       Participante[]
+  competicaoId String?
+  competicao   Competicao?   @relation(fields: [competicaoId], references: [id])
 }
 
 model Participante {
@@ -40,4 +42,10 @@ model Configuracao {
 model Categoria {
   id   String @id @default(uuid())
   nome String @unique
+}
+
+model Competicao {
+  id     String  @id @default(uuid())
+  nome   String  @unique
+  turmas Turma[]
 }

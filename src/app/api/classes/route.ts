@@ -5,11 +5,10 @@ export async function GET() {
   try {
     const classes = await prisma.turma.findMany({
       include: {
-        _count: {
-          select: { alunos: true }
-        }
+        _count: { select: { alunos: true } },
+        competicao: { select: { id: true, nome: true } }
       },
-      orderBy: { pontuacao: 'desc' }
+      orderBy: { nome: 'asc' }
     });
     return NextResponse.json(classes);
   } catch (error) {
@@ -19,11 +18,13 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json();
+    const { nome, competicaoId } = await request.json();
+    if (!nome) return NextResponse.json({ error: 'Nome da turma é obrigatório' }, { status: 400 });
+    
     const newClass = await prisma.turma.create({
-      data: {
-        nome: data.nome,
-        pontuacao: 0,
+      data: { 
+        nome,
+        ...(competicaoId ? { competicaoId } : {})
       }
     });
     return NextResponse.json(newClass, { status: 201 });

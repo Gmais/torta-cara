@@ -9,6 +9,12 @@ interface Turma {
   id: string;
   nome: string;
   pontuacao: number;
+  competicao?: { id: string; nome: string };
+}
+
+interface Competicao {
+  id: string;
+  nome: string;
 }
 
 interface Pergunta {
@@ -24,6 +30,10 @@ interface Duelo {
 }
 
 export default function JogoPage() {
+  const [todasTurmas, setTodasTurmas] = useState<Turma[]>([]);
+  const [competicoes, setCompeticoes] = useState<Competicao[]>([]);
+  const [competicaoAtiva, setCompeticaoAtiva] = useState<Competicao | null>(null);
+  
   const [turmas, setTurmas] = useState<Turma[]>([]);
   const [duelos, setDuelos] = useState<Duelo[]>([]);
   
@@ -49,20 +59,15 @@ export default function JogoPage() {
     const fetchData = async () => {
       const resClasses = await fetch('/api/classes');
       const classes = await resClasses.json();
-      setTurmas(classes);
+      setTodasTurmas(classes);
 
       const resCat = await fetch('/api/categories');
       const cats = await resCat.json();
       setCategorias(cats);
-
-      // Gera os duelos (Round Robin)
-      const novosDuelos: Duelo[] = [];
-      for (let i = 0; i < classes.length; i++) {
-        for (let j = i + 1; j < classes.length; j++) {
-          novosDuelos.push({ t1: classes[i], t2: classes[j] });
-        }
-      }
-      setDuelos(novosDuelos);
+      
+      const resComp = await fetch('/api/competitions');
+      const comps = await resComp.json();
+      setCompeticoes(comps);
 
       // Recupera estado salvo
       const savedState = localStorage.getItem('torta_cara_gameState');
@@ -70,10 +75,12 @@ export default function JogoPage() {
         try {
           const parsed = JSON.parse(savedState);
           setRodada(parsed.rodada || 1);
-          // Previne index out of bounds caso uma turma tenha sido excluída
-          setDueloIndex(parsed.dueloIndex < novosDuelos.length ? parsed.dueloIndex : 0);
           setPontosValendo(parsed.pontosValendo || 10);
           if (parsed.historico) setHistorico(parsed.historico);
+          
+          if (parsed.competicaoAtiva) {
+            setupGameForCompetition(classes, parsed.competicaoAtiva, parsed.dueloIndex || 0);
+          }
         } catch(e) {}
       }
 
@@ -83,6 +90,21 @@ export default function JogoPage() {
     fetchData();
   }, []);
 
+  const setupGameForCompetition = (allClasses: Turma[], comp: Competicao, savedDueloIndex: number = 0) => {
+    const turmasFiltradas = allClasses.filter(t => t.competicao?.id === comp.id);
+    setTurmas(turmasFiltradas.sort((a,b) => b.pontuacao - a.pontuacao));
+    
+    const novosDuelos: Duelo[] = [];
+    for (let i = 0; i < turmasFiltradas.length; i++) {
+      for (let j = i + 1; j < turmasFiltradas.length; j++) {
+        novosDuelos.push({ t1: turmasFiltradas[i], t2: turmasFiltradas[j] });
+      }
+    }
+    setDuelos(novosDuelos);
+    setDueloIndex(savedDueloIndex < novosDuelos.length ? savedDueloIndex : 0);
+    setCompeticaoAtiva(comp);
+  };
+
   // Salva o estado sempre que mudar
   useEffect(() => {
     if (!loading) {
@@ -90,10 +112,11 @@ export default function JogoPage() {
         rodada,
         dueloIndex,
         pontosValendo,
-        historico
+        historico,
+        competicaoAtiva
       }));
     }
-  }, [rodada, dueloIndex, pontosValendo, historico, loading]);
+  }, [rodada, dueloIndex, pontosValendo, historico, competicaoAtiva, loading]);
 
   const handleSortear = async () => {
     setLoadingPergunta(true);
@@ -259,11 +282,39 @@ export default function JogoPage() {
 
   if (loading) return <div className="p-8 text-center">Carregando Jogo...</div>;
 
+  if (!competicaoAtiva) {
+    return (
+      <div className="p-8 max-w-4xl mx-auto text-center animate-fade-in flex flex-col items-center justify-center min-h-screen">
+        <h1 className="mb-8 text-4xl">Selecione a Competição</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+          {competicoes.map(comp => (
+             <Card 
+               key={comp.id} 
+               onClick={() => setupGameForCompetition(todasTurmas, comp)}
+               style={{ cursor: 'pointer', transition: 'all 0.2s', border: '1px solid transparent' }}
+               onMouseOver={e => e.currentTarget.style.borderColor = 'var(--primary)'}
+               onMouseOut={e => e.currentTarget.style.borderColor = 'transparent'}
+             >
+               <h2>{comp.nome}</h2>
+               <p style={{ color: 'var(--text-muted)' }}>{todasTurmas.filter(t => t.competicao?.id === comp.id).length} turmas cadastradas</p>
+             </Card>
+          ))}
+          {competicoes.length === 0 && (
+            <p style={{ color: 'var(--text-muted)', gridColumn: '1 / -1' }}>Nenhuma competição cadastrada. Vá ao painel admin.</p>
+          )}
+        </div>
+        <Link href="/" style={{ marginTop: '2rem', display: 'inline-block' }}>
+          <Button variant="secondary">Voltar ao Início</Button>
+        </Link>
+      </div>
+    );
+  }
+
   if (turmas.length < 2) {
     return (
-      <div className="p-8 text-center">
-        <h2>Você precisa cadastrar pelo menos 2 turmas no Admin para iniciar o jogo.</h2>
-        <Link href="/admin"><Button className="mt-4">Ir para o Admin</Button></Link>
+      <div className="p-8 text-center flex flex-col items-center justify-center min-h-screen animate-fade-in">
+        <h2>Você precisa cadastrar pelo menos 2 turmas nesta competição para iniciar o jogo.</h2>
+        <Button className="mt-4" onClick={() => setCompeticaoAtiva(null)}>Escolher Outra Competição</Button>
       </div>
     );
   }
@@ -292,8 +343,9 @@ export default function JogoPage() {
             />
             <span style={{ fontWeight: 'bold' }}>pontos</span>
           </div>
+          <Button variant="secondary" onClick={() => setCompeticaoAtiva(null)}>Trocar Competição</Button>
           <Link href="/">
-            <Button variant="secondary">Sair do Jogo</Button>
+            <Button variant="secondary">Sair</Button>
           </Link>
         </div>
       </div>

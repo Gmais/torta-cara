@@ -10,6 +10,13 @@ interface Turma {
   nome: string;
   pontuacao: number;
   _count: { alunos: number };
+  competicao?: { id: string; nome: string };
+}
+
+interface Competicao {
+  id: string;
+  nome: string;
+  turmas: { id: string; nome: string }[];
 }
 
 interface Pergunta {
@@ -23,8 +30,11 @@ export default function AdminPage() {
   const [turmas, setTurmas] = useState<Turma[]>([]);
   const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
   const [listaCategorias, setListaCategorias] = useState<string[]>([]);
+  const [competicoes, setCompeticoes] = useState<Competicao[]>([]);
   
   const [novaTurma, setNovaTurma] = useState('');
+  const [novaCompeticao, setNovaCompeticao] = useState('');
+  const [competicaoSelecionada, setCompeticaoSelecionada] = useState('');
   const [pontosPorRodada, setPontosPorRodada] = useState(10);
   const [loading, setLoading] = useState(true);
 
@@ -56,10 +66,17 @@ export default function AdminPage() {
     setListaCategorias(data);
   };
 
+  const fetchCompeticoes = async () => {
+    const res = await fetch('/api/competitions');
+    const data = await res.json();
+    setCompeticoes(data);
+  };
+
   useEffect(() => {
     fetchTurmas();
     fetchPerguntas();
     fetchCategorias();
+    fetchCompeticoes();
     fetchSettings();
   }, []);
 
@@ -70,10 +87,24 @@ export default function AdminPage() {
     await fetch('/api/classes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome: novaTurma })
+      body: JSON.stringify({ nome: novaTurma, competicaoId: competicaoSelecionada || undefined })
     });
     setNovaTurma('');
+    setCompeticaoSelecionada('');
     fetchTurmas();
+    fetchCompeticoes();
+  };
+
+  const handleCriarCompeticao = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!novaCompeticao.trim()) return;
+    await fetch('/api/competitions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome: novaCompeticao })
+    });
+    setNovaCompeticao('');
+    fetchCompeticoes();
   };
 
   const handleUpdateSettings = async () => {
@@ -88,6 +119,14 @@ export default function AdminPage() {
   const handleDeleteTurma = async (id: string) => {
     if (!confirm('Deseja excluir esta turma?')) return;
     await fetch(`/api/classes/${id}`, { method: 'DELETE' });
+    fetchTurmas();
+    fetchCompeticoes();
+  };
+
+  const handleDeleteCompeticao = async (id: string) => {
+    if (!confirm('Deseja excluir esta competição?')) return;
+    await fetch(`/api/competitions/${id}`, { method: 'DELETE' });
+    fetchCompeticoes();
     fetchTurmas();
   };
 
@@ -204,9 +243,42 @@ export default function AdminPage() {
                 placeholder="Ex: 3º Ano B"
               />
             </div>
+            <div>
+              <label style={{ display: 'block', marginBottom: '0.5rem' }}>Competição</label>
+              <select value={competicaoSelecionada} onChange={e => setCompeticaoSelecionada(e.target.value)}>
+                <option value="">Sem Competição</option>
+                {competicoes.map(c => <option key={c.id} value={c.id}>{c.nome}</option>)}
+              </select>
+            </div>
             <Button type="submit">Adicionar Turma</Button>
           </form>
         </Card>
+      </div>
+
+      <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Competições</h2>
+      <Card style={{ marginBottom: '2rem' }}>
+        <form onSubmit={handleCriarCompeticao} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
+          <div style={{ flex: 1 }}>
+            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Nova Competição</label>
+            <input type="text" value={novaCompeticao} onChange={(e) => setNovaCompeticao(e.target.value)} placeholder="Ex: Fundamental II" />
+          </div>
+          <Button type="submit" style={{ background: 'var(--success)' }}>Criar</Button>
+        </form>
+      </Card>
+      
+      <div style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
+        {competicoes.map(comp => (
+          <Card key={comp.id} className="flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <h3 style={{ margin: 0 }}>{comp.nome}</h3>
+              <p style={{ color: 'var(--text-muted)' }}>Turmas: {comp.turmas.map(t => t.nome).join(', ') || 'Nenhuma'}</p>
+            </div>
+            <Button onClick={() => handleDeleteCompeticao(comp.id)} style={{ background: 'var(--error)' }}>
+              Excluir
+            </Button>
+          </Card>
+        ))}
+        {competicoes.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma competição cadastrada.</p>}
       </div>
 
       <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Turmas Cadastradas</h2>

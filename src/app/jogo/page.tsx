@@ -16,32 +16,72 @@ interface Pergunta {
   pergunta: string;
   resposta: string;
   categoria: string;
-  nomeProfessor?: string;
+}
+
+interface Duelo {
+  t1: Turma;
+  t2: Turma;
 }
 
 export default function JogoPage() {
   const [turmas, setTurmas] = useState<Turma[]>([]);
+  const [duelos, setDuelos] = useState<Duelo[]>([]);
+  
+  // Estados do Jogo (Persistidos no localStorage)
+  const [rodada, setRodada] = useState(1);
+  const [dueloIndex, setDueloIndex] = useState(0);
+  const [pontosValendo, setPontosValendo] = useState(10);
+  
+  // Estado Local (Não persistido)
   const [perguntaAtual, setPerguntaAtual] = useState<Pergunta | null>(null);
   const [mostrarResposta, setMostrarResposta] = useState(false);
-  const [pontosPorRodada, setPontosPorRodada] = useState(10);
   const [loading, setLoading] = useState(true);
   const [loadingPergunta, setLoadingPergunta] = useState(false);
 
-  const fetchData = async () => {
-    const resClasses = await fetch('/api/classes');
-    const classes = await resClasses.json();
-    setTurmas(classes);
-
-    const resSettings = await fetch('/api/settings');
-    const settings = await resSettings.json();
-    if (settings) setPontosPorRodada(settings.pontosPorRodada);
-    
-    setLoading(false);
-  };
-
+  // Carrega dados iniciais
   useEffect(() => {
+    const fetchData = async () => {
+      const resClasses = await fetch('/api/classes');
+      const classes = await resClasses.json();
+      setTurmas(classes);
+
+      // Gera os duelos (Round Robin)
+      const novosDuelos: Duelo[] = [];
+      for (let i = 0; i < classes.length; i++) {
+        for (let j = i + 1; j < classes.length; j++) {
+          novosDuelos.push({ t1: classes[i], t2: classes[j] });
+        }
+      }
+      setDuelos(novosDuelos);
+
+      // Recupera estado salvo
+      const savedState = localStorage.getItem('torta_cara_gameState');
+      if (savedState) {
+        try {
+          const parsed = JSON.parse(savedState);
+          setRodada(parsed.rodada || 1);
+          // Previne index out of bounds caso uma turma tenha sido excluída
+          setDueloIndex(parsed.dueloIndex < novosDuelos.length ? parsed.dueloIndex : 0);
+          setPontosValendo(parsed.pontosValendo || 10);
+        } catch(e) {}
+      }
+
+      setLoading(false);
+    };
+
     fetchData();
   }, []);
+
+  // Salva o estado sempre que mudar
+  useEffect(() => {
+    if (!loading) {
+      localStorage.setItem('torta_cara_gameState', JSON.stringify({
+        rodada,
+        dueloIndex,
+        pontosValendo
+      }));
+    }
+  }, [rodada, dueloIndex, pontosValendo, loading]);
 
   const handleSortear = async () => {
     setLoadingPergunta(true);
@@ -62,11 +102,15 @@ export default function JogoPage() {
     if (!turma) return;
     
     const novaPontuacao = operacao === 'add' 
-      ? turma.pontuacao + pontosPorRodada 
-      : Math.max(0, turma.pontuacao - pontosPorRodada);
+      ? turma.pontuacao + pontosValendo 
+      : Math.max(0, turma.pontuacao - pontosValendo);
 
-    // Otimista
+    // Atualiza otimista (Reflete na tabela de duelos e no placar lateral)
     setTurmas(prev => prev.map(t => t.id === turmaId ? { ...t, pontuacao: novaPontuacao } : t).sort((a,b) => b.pontuacao - a.pontuacao));
+    setDuelos(prev => prev.map(d => ({
+      t1: d.t1.id === turmaId ? { ...d.t1, pontuacao: novaPontuacao } : d.t1,
+      t2: d.t2.id === turmaId ? { ...d.t2, pontuacao: novaPontuacao } : d.t2,
+    })));
     
     await fetch(`/api/classes/${turmaId}`, {
       method: 'PUT',
@@ -75,25 +119,101 @@ export default function JogoPage() {
     });
   };
 
+  const proximoDuelo = () => {
+    setPerguntaAtual(null);
+    setMostrarResposta(false);
+    
+    if (dueloIndex + 1 >= duelos.length) {
+      // Fim da rodada, volta pro primeiro duelo e aumenta o contador de rodadas
+      setDueloIndex(0);
+      setRodada(r => r + 1);
+    } else {
+      setDueloIndex(i => i + 1);
+    }
+  };
+
   if (loading) return <div className="p-8 text-center">Carregando Jogo...</div>;
+
+  if (turmas.length < 2) {
+    return (
+      <div className="p-8 text-center">
+        <h2>Você precisa cadastrar pelo menos 2 turmas no Admin para iniciar o jogo.</h2>
+        <Link href="/admin"><Button className="mt-4">Ir para o Admin</Button></Link>
+      </div>
+    );
+  }
+
+  const dueloAtual = duelos[dueloIndex];
+  // Pegamos a turma mais atualizada do estado global para garantir pontuação real time no duelo
+  const turma1 = turmas.find(t => t.id === dueloAtual.t1.id) || dueloAtual.t1;
+  const turma2 = turmas.find(t => t.id === dueloAtual.t2.id) || dueloAtual.t2;
 
   return (
     <div className="p-8 max-w-6xl mx-auto animate-fade-in min-h-screen flex flex-col">
-      <div className="flex justify-between items-center mb-8">
-        <h1>Ao Vivo: Torta na Cara</h1>
-        <Link href="/">
-          <Button variant="secondary">Sair do Jogo</Button>
-        </Link>
+      {/* Header com controles Rápidos */}
+      <div className="flex justify-between items-center mb-6">
+        <div>
+          <h1 style={{ marginBottom: '0.2rem' }}>Ao Vivo: Torta na Cara</h1>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>
+            Rodada {rodada} | Duelo {dueloIndex + 1} de {duelos.length}
+          </p>
+        </div>
+        
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.5rem 1rem', borderRadius: '8px' }}>
+            <span style={{ fontWeight: 'bold' }}>Valendo:</span>
+            <input 
+              type="number" 
+              value={pontosValendo}
+              onChange={(e) => setPontosValendo(Number(e.target.value))}
+              style={{ width: '80px', margin: 0, padding: '0.25rem', textAlign: 'center' }}
+            />
+            <span style={{ fontWeight: 'bold' }}>pontos</span>
+          </div>
+          <Link href="/">
+            <Button variant="secondary">Sair do Jogo</Button>
+          </Link>
+        </div>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '2rem', flex: 1 }}>
-        {/* Painel Principal (Perguntas) */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '400px' }}>
+        {/* Painel Principal (Duelo e Perguntas) */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          
+          {/* Box do Duelo Atual */}
+          <Card style={{ background: 'linear-gradient(135deg, rgba(244,63,94,0.1), rgba(139,92,246,0.1))', border: '1px solid var(--primary)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              {/* Equipe 1 */}
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma1.nome}</h2>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
+                  <Button onClick={() => handlePontuar(turma1.id, 'add')} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
+                  <Button onClick={() => handlePontuar(turma1.id, 'sub')} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
+                </div>
+              </div>
+
+              {/* VS */}
+              <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--accent)', margin: '0 2rem', fontStyle: 'italic' }}>
+                VS
+              </div>
+
+              {/* Equipe 2 */}
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <h2 style={{ margin: 0, fontSize: '2.5rem' }}>{turma2.nome}</h2>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem' }}>
+                  <Button onClick={() => handlePontuar(turma2.id, 'add')} style={{ background: 'var(--success)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>+ Acertou</Button>
+                  <Button onClick={() => handlePontuar(turma2.id, 'sub')} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>- Errou</Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Box da Pergunta */}
+          <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '350px' }}>
             {!perguntaAtual ? (
               <div style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>
-                  Pronto para começar?
+                <h2 style={{ fontSize: '2.2rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>
+                  Aguardando sorteio...
                 </h2>
                 <Button onClick={handleSortear} disabled={loadingPergunta} style={{ fontSize: '1.5rem', padding: '1rem 3rem' }}>
                   {loadingPergunta ? 'Sorteando...' : 'Sortear Pergunta'}
@@ -120,17 +240,26 @@ export default function JogoPage() {
                   </Button>
                 )}
 
-                <div style={{ marginTop: '3rem' }}>
-                  <Button onClick={handleSortear} disabled={loadingPergunta}>
-                    Próxima Pergunta
+                <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+                  <Button onClick={handleSortear} disabled={loadingPergunta} variant="secondary">
+                    Sortear Outra (Substituir)
                   </Button>
                 </div>
               </div>
             )}
           </Card>
+
+          {/* Botão de Avançar Duelo */}
+          <Button 
+            onClick={proximoDuelo} 
+            style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'var(--accent)', marginTop: '1rem' }}
+          >
+            {dueloIndex + 1 >= duelos.length ? 'Finalizar Rodada e Avançar' : 'Chamar Próximo Duelo ➔'}
+          </Button>
+
         </div>
 
-        {/* Placar */}
+        {/* Placar Global (Read-only agora, os botões foram pro duelo) */}
         <div>
           <Card style={{ height: '100%' }}>
             <h2 style={{ textAlign: 'center', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--glass-border)' }}>
@@ -138,39 +267,32 @@ export default function JogoPage() {
             </h2>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {turmas.map((turma, index) => (
-                <div key={turma.id} style={{ background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--glass-border)' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <span style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-                      {index === 0 && '🥇 '}
-                      {index === 1 && '🥈 '}
-                      {index === 2 && '🥉 '}
-                      {turma.nome}
-                    </span>
-                    <span style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--accent)' }}>
-                      {turma.pontuacao}
-                    </span>
+              {turmas.map((turma, index) => {
+                // Destacar se a turma estiver no duelo atual
+                const isNoDuelo = turma.id === turma1.id || turma.id === turma2.id;
+                
+                return (
+                  <div key={turma.id} style={{ 
+                    background: isNoDuelo ? 'rgba(244,63,94,0.1)' : 'rgba(255,255,255,0.03)', 
+                    padding: '1rem', 
+                    borderRadius: '8px', 
+                    border: isNoDuelo ? '1px solid var(--primary)' : '1px solid var(--glass-border)',
+                    transition: 'all 0.3s'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
+                        {index === 0 && '🥇 '}
+                        {index === 1 && '🥈 '}
+                        {index === 2 && '🥉 '}
+                        {turma.nome}
+                      </span>
+                      <span style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--accent)' }}>
+                        {turma.pontuacao}
+                      </span>
+                    </div>
                   </div>
-                  
-                  {/* Controles do placar para o apresentador */}
-                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
-                    <button 
-                      onClick={() => handlePontuar(turma.id, 'add')}
-                      style={{ flex: 1, background: 'rgba(16,185,129,0.2)', color: 'var(--success)', border: 'none', padding: '0.5rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
-                      + Acertou
-                    </button>
-                    <button 
-                      onClick={() => handlePontuar(turma.id, 'sub')}
-                      style={{ flex: 1, background: 'rgba(239,68,68,0.2)', color: 'var(--error)', border: 'none', padding: '0.5rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
-                      - Errou (Torta)
-                    </button>
-                  </div>
-                </div>
-              ))}
-              
-              {turmas.length === 0 && (
-                <p style={{ textAlign: 'center', color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>
-              )}
+                )
+              })}
             </div>
           </Card>
         </div>

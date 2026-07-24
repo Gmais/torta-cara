@@ -33,6 +33,7 @@ export default function AdminPage() {
   const [competicoes, setCompeticoes] = useState<Competicao[]>([]);
   
   const [novaTurma, setNovaTurma] = useState('');
+  const [editandoTurmaId, setEditandoTurmaId] = useState<string | null>(null);
   const [novaCompeticao, setNovaCompeticao] = useState('');
   const [competicaoSelecionada, setCompeticaoSelecionada] = useState('');
   const [pontosPorRodada, setPontosPorRodada] = useState(10);
@@ -80,19 +81,43 @@ export default function AdminPage() {
     fetchSettings();
   }, []);
 
-  const handleCriarTurma = async (e: React.FormEvent) => {
+  const handleSalvarTurma = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!novaTurma.trim()) return;
     
-    await fetch('/api/classes', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome: novaTurma, competicaoId: competicaoSelecionada || undefined })
-    });
+    if (editandoTurmaId) {
+      await fetch(`/api/classes/${editandoTurmaId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome: novaTurma, competicaoId: competicaoSelecionada || '' })
+      });
+    } else {
+      await fetch('/api/classes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome: novaTurma, competicaoId: competicaoSelecionada || undefined })
+      });
+    }
+    
     setNovaTurma('');
     setCompeticaoSelecionada('');
+    setEditandoTurmaId(null);
     fetchTurmas();
     fetchCompeticoes();
+  };
+
+  const iniciarEdicaoTurma = (turma: Turma) => {
+    setEditandoTurmaId(turma.id);
+    setNovaTurma(turma.nome);
+    setCompeticaoSelecionada(turma.competicao?.id || '');
+    // Scrolla para o form
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
+  const cancelarEdicaoTurma = () => {
+    setEditandoTurmaId(null);
+    setNovaTurma('');
+    setCompeticaoSelecionada('');
   };
 
   const handleCriarCompeticao = async (e: React.FormEvent) => {
@@ -232,8 +257,8 @@ export default function AdminPage() {
         </Card>
 
         <Card>
-          <h2>Nova Turma</h2>
-          <form onSubmit={handleCriarTurma} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
+          <h2>{editandoTurmaId ? 'Editar Turma' : 'Nova Turma'}</h2>
+          <form onSubmit={handleSalvarTurma} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '0.5rem' }}>Nome da Turma</label>
               <input 
@@ -250,7 +275,16 @@ export default function AdminPage() {
                 {competicoes.map(c => <option key={c.id} value={c.id}>{c.nome}</option>)}
               </select>
             </div>
-            <Button type="submit">Adicionar Turma</Button>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Button type="submit" style={{ flex: 1, background: editandoTurmaId ? 'var(--accent)' : 'var(--primary)' }}>
+                {editandoTurmaId ? 'Salvar Alterações' : 'Adicionar Turma'}
+              </Button>
+              {editandoTurmaId && (
+                <Button type="button" variant="secondary" onClick={cancelarEdicaoTurma}>
+                  Cancelar
+                </Button>
+              )}
+            </div>
           </form>
         </Card>
       </div>
@@ -289,16 +323,31 @@ export default function AdminPage() {
               <h3 style={{ margin: 0 }}>{turma.nome}</h3>
               <p style={{ color: 'var(--text-muted)' }}>{turma._count.alunos} alunos inscritos | {turma.pontuacao} pontos</p>
               
-              <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
-                Link de Inscrição: <br/>
-                <a href={`/turma/${turma.id}`} target="_blank" style={{ color: 'var(--secondary)' }}>
-                  {typeof window !== 'undefined' ? window.location.origin : ''}/turma/{turma.id}
-                </a>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                <div>
+                  <span style={{ fontWeight: 'bold' }}>Link de Inscrição:</span> <br/>
+                  <a href={`/turma/${turma.id}`} target="_blank" style={{ color: 'var(--secondary)' }}>
+                    {typeof window !== 'undefined' ? window.location.origin : ''}/turma/{turma.id}
+                  </a>
+                </div>
+                
+                <img 
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + '/turma/' + turma.id : '')}&color=255-255-255&bgcolor=15-23-42`}
+                  alt={`QR Code ${turma.nome}`}
+                  width={64}
+                  height={64}
+                  style={{ borderRadius: '8px', border: '2px solid rgba(255,255,255,0.1)' }}
+                />
               </div>
             </div>
-            <Button onClick={() => handleDeleteTurma(turma.id)} style={{ background: 'var(--error)' }}>
-              Excluir
-            </Button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <Button variant="secondary" onClick={() => iniciarEdicaoTurma(turma)}>
+                Editar
+              </Button>
+              <Button onClick={() => handleDeleteTurma(turma.id)} style={{ background: 'var(--error)' }}>
+                Excluir
+              </Button>
+            </div>
           </Card>
         ))}
         {turmas.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>}

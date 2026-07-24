@@ -5,11 +5,17 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   try {
     const data = await request.json();
     const resolvedParams = await params;
+    
+    const updateData: any = {};
+    if (data.pontuacao !== undefined) updateData.pontuacao = data.pontuacao;
+    if (data.nome !== undefined) updateData.nome = data.nome;
+    if (data.competicaoId !== undefined) {
+      updateData.competicaoId = data.competicaoId === '' ? null : data.competicaoId;
+    }
+
     const updatedClass = await prisma.turma.update({
       where: { id: resolvedParams.id },
-      data: {
-        pontuacao: data.pontuacao,
-      }
+      data: updateData
     });
     return NextResponse.json(updatedClass);
   } catch (error) {

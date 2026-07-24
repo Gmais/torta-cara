@@ -106,6 +106,13 @@ export default function JogoPage() {
       const data = await res.json();
       if (data && data.id) {
         setPerguntaAtual(data);
+        
+        // Sincroniza com o backend para a tela do apresentador
+        await fetch('/api/settings', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ perguntaAtualId: data.id })
+        });
       } else {
         alert('Nenhuma pergunta encontrada para esta categoria.');
         setPerguntaAtual(null);
@@ -153,9 +160,16 @@ export default function JogoPage() {
     }, 1500);
   };
 
-  const proximoDuelo = () => {
+  const proximoDuelo = async () => {
     setPerguntaAtual(null);
     setMostrarResposta(false);
+    
+    // Limpa a pergunta na API do apresentador
+    fetch('/api/settings', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ perguntaAtualId: null })
+    });
     
     if (dueloIndex + 1 >= duelos.length) {
       // Fim da rodada, volta pro primeiro duelo e aumenta o contador de rodadas
@@ -169,6 +183,13 @@ export default function JogoPage() {
   const dueloAnterior = async () => {
     setPerguntaAtual(null);
     setMostrarResposta(false);
+    
+    // Limpa a pergunta na API do apresentador
+    fetch('/api/settings', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ perguntaAtualId: null })
+    });
     
     // Desfaz a pontuação do duelo anterior
     if (historico.length > 0) {
@@ -219,6 +240,13 @@ export default function JogoPage() {
       setHistorico([]);
       setPerguntaAtual(null);
       setMostrarResposta(false);
+      
+      // Limpa a pergunta na API do apresentador
+      await fetch('/api/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ perguntaAtualId: null })
+      });
       
       // Atualiza banco de dados
       await Promise.all(turmas.map(t => fetch(`/api/classes/${t.id}`, {

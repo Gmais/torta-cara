@@ -15,12 +15,18 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const data = await request.json();
-    const settings = await prisma.configuracao.upsert({
+    
+    // Filtra apenas os campos permitidos
+    const updateData: any = {};
+    if (data.pontosPorRodada !== undefined) updateData.pontosPorRodada = data.pontosPorRodada;
+    if (data.perguntaAtualId !== undefined) updateData.perguntaAtualId = data.perguntaAtualId;
+
+    await prisma.configuracao.upsert({
       where: { id: 'singleton' },
-      update: { pontosPorRodada: data.pontosPorRodada },
-      create: { id: 'singleton', pontosPorRodada: data.pontosPorRodada },
+      update: updateData,
+      create: { id: 'singleton', ...updateData }
     });
-    return NextResponse.json(settings);
+    return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: 'Erro ao atualizar configurações' }, { status: 500 });
   }

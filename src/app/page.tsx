@@ -27,6 +27,19 @@ export default function Home() {
               <Link href="/jogo" style={{ width: '100%' }}>
                 <Button style={{ width: '100%' }}>Iniciar Partida</Button>
               </Link>
+
+              {url && (
+                <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', width: '100%' }}>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 'bold' }}>Painel do Apresentador (Celular):</p>
+                  <img 
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url + '/apresentador')}&color=255-255-255&bgcolor=15-23-42`} 
+                    alt="QR Code Apresentador" 
+                    width={120} 
+                    height={120} 
+                    style={{ margin: '0 auto', borderRadius: '8px' }} 
+                  />
+                </div>
+              )}
             </div>
           </Card>
 

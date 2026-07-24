@@ -34,6 +34,7 @@ model Pergunta {
 model Configuracao {
   id              String @id @default("singleton")
   pontosPorRodada Int    @default(10)
+  perguntaAtualId String?
 }
 
 model Categoria {

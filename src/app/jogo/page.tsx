@@ -37,6 +37,10 @@ export default function JogoPage() {
   const [mostrarResposta, setMostrarResposta] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadingPergunta, setLoadingPergunta] = useState(false);
+  
+  // Categorias para o filtro
+  const [categorias, setCategorias] = useState<string[]>([]);
+  const [categoriaFiltro, setCategoriaFiltro] = useState<string>(''); // '' = Aleatório
 
   // Carrega dados iniciais
   useEffect(() => {
@@ -44,6 +48,10 @@ export default function JogoPage() {
       const resClasses = await fetch('/api/classes');
       const classes = await resClasses.json();
       setTurmas(classes);
+
+      const resCat = await fetch('/api/categories');
+      const cats = await resCat.json();
+      setCategorias(cats);
 
       // Gera os duelos (Round Robin)
       const novosDuelos: Duelo[] = [];
@@ -87,9 +95,17 @@ export default function JogoPage() {
     setLoadingPergunta(true);
     setMostrarResposta(false);
     try {
-      const res = await fetch('/api/questions?random=true');
+      const url = categoriaFiltro 
+        ? `/api/questions?random=true&categoria=${encodeURIComponent(categoriaFiltro)}`
+        : '/api/questions?random=true';
+      const res = await fetch(url);
       const data = await res.json();
-      setPerguntaAtual(data);
+      if (data && data.id) {
+        setPerguntaAtual(data);
+      } else {
+        alert('Nenhuma pergunta encontrada para esta categoria.');
+        setPerguntaAtual(null);
+      }
     } catch (err) {
       console.error(err);
     } finally {
@@ -209,9 +225,33 @@ export default function JogoPage() {
           </Card>
 
           {/* Box da Pergunta */}
-          <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '350px' }}>
+          <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '350px', position: 'relative' }}>
+            
+            {/* Seletor de Categoria no topo do Card */}
+            <div style={{ position: 'absolute', top: '1rem', left: '0', right: '0', display: 'flex', justifyContent: 'center' }}>
+              <select 
+                value={categoriaFiltro} 
+                onChange={(e) => setCategoriaFiltro(e.target.value)}
+                style={{ 
+                  background: 'var(--primary)', 
+                  color: 'white', 
+                  border: 'none', 
+                  padding: '0.25rem 1rem', 
+                  borderRadius: '99px', 
+                  fontSize: '0.9rem', 
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  outline: 'none',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.2)'
+                }}
+              >
+                <option value="">Modo Aleatório (Todas as Categorias)</option>
+                {categorias.map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+
             {!perguntaAtual ? (
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '3rem' }}>
                 <h2 style={{ fontSize: '2.2rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>
                   Aguardando sorteio...
                 </h2>
@@ -220,10 +260,12 @@ export default function JogoPage() {
                 </Button>
               </div>
             ) : (
-              <div className="animate-fade-in" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <span style={{ background: 'var(--primary)', padding: '0.25rem 1rem', borderRadius: '99px', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
-                  Categoria: {perguntaAtual.categoria}
-                </span>
+              <div className="animate-fade-in" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem' }}>
+                {categoriaFiltro === '' && (
+                  <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                    Sorteada da categoria: {perguntaAtual.categoria}
+                  </span>
+                )}
                 
                 <h2 style={{ fontSize: '2.5rem', lineHeight: '1.3', marginBottom: '3rem' }}>
                   {perguntaAtual.pergunta}

@@ -11,9 +11,23 @@ interface Pergunta {
 }
 
 export default function ApresentadorPage() {
+  const [autenticado, setAutenticado] = useState(false);
+  const [senhaInput, setSenhaInput] = useState('');
   const [pergunta, setPergunta] = useState<Pergunta | null>(null);
 
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (parseInt(senhaInput) === new Date().getDate()) {
+      setAutenticado(true);
+    } else {
+      alert("Senha incorreta!");
+      setSenhaInput('');
+    }
+  };
+
   useEffect(() => {
+    if (!autenticado) return;
+
     const fetchState = async () => {
       try {
         const res = await fetch('/api/presenter');
@@ -27,7 +41,29 @@ export default function ApresentadorPage() {
     fetchState();
     const interval = setInterval(fetchState, 2000); // Polling a cada 2 segundos
     return () => clearInterval(interval);
-  }, []);
+  }, [autenticado]);
+
+  if (!autenticado) {
+    return (
+      <div className="p-8 max-w-md mx-auto animate-fade-in flex flex-col justify-center min-h-screen">
+        <Card style={{ textAlign: 'center' }}>
+          <h2 style={{ marginBottom: '0.5rem' }}>Painel do Apresentador</h2>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Digite a senha do dia para acessar.</p>
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input 
+              type="password" 
+              value={senhaInput} 
+              onChange={e => setSenhaInput(e.target.value)} 
+              placeholder="Senha..."
+              required
+              style={{ padding: '1rem', fontSize: '1.2rem', textAlign: 'center' }}
+            />
+            <button type="submit" style={{ padding: '1rem', fontSize: '1.1rem', background: 'var(--primary)', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>Entrar</button>
+          </form>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4" style={{ background: 'var(--background)' }}>

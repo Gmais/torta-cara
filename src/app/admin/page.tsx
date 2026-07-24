@@ -27,6 +27,9 @@ interface Pergunta {
 }
 
 export default function AdminPage() {
+  const [autenticado, setAutenticado] = useState(false);
+  const [senhaInput, setSenhaInput] = useState('');
+  
   const [turmas, setTurmas] = useState<Turma[]>([]);
   const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
   const [listaCategorias, setListaCategorias] = useState<string[]>([]);
@@ -230,6 +233,41 @@ export default function AdminPage() {
   const categorias = listaCategorias;
 
   if (loading) return <div className="p-8 text-center">Carregando...</div>;
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (parseInt(senhaInput) === new Date().getDate()) {
+      setAutenticado(true);
+    } else {
+      alert("Senha incorreta!");
+      setSenhaInput('');
+    }
+  };
+
+  if (!autenticado) {
+    return (
+      <div className="p-8 max-w-md mx-auto animate-fade-in flex flex-col justify-center min-h-screen">
+        <Card style={{ textAlign: 'center' }}>
+          <h2 style={{ marginBottom: '0.5rem' }}>Acesso Restrito</h2>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Digite a senha do dia para acessar o Painel Admin.</p>
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input 
+              type="password" 
+              value={senhaInput} 
+              onChange={e => setSenhaInput(e.target.value)} 
+              placeholder="Senha..."
+              required
+              style={{ padding: '1rem', fontSize: '1.2rem', textAlign: 'center' }}
+            />
+            <Button type="submit" style={{ padding: '1rem', fontSize: '1.1rem' }}>Entrar</Button>
+            <Link href="/">
+              <Button type="button" variant="secondary" style={{ width: '100%', marginTop: '0.5rem' }}>Voltar</Button>
+            </Link>
+          </form>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="p-8 max-w-4xl mx-auto animate-fade-in pb-16">

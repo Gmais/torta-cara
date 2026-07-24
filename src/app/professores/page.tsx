@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/Button/Button';
 import { Card } from '@/components/Card/Card';
 import Link from 'next/link';
@@ -8,13 +8,34 @@ import Link from 'next/link';
 export default function ProfessoresPage() {
   const [pergunta, setPergunta] = useState('');
   const [resposta, setResposta] = useState('');
-  const [categoria, setCategoria] = useState('EF');
+  
+  const [categoriasExistentes, setCategoriasExistentes] = useState<string[]>([]);
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
+  const [novaCategoria, setNovaCategoria] = useState('');
+  
   const [nomeProfessor, setNomeProfessor] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // Busca categorias existentes
+    fetch('/api/categories')
+      .then(res => res.json())
+      .then(data => {
+        setCategoriasExistentes(data);
+        if (data.length > 0) setCategoriaSelecionada(data[0]);
+      })
+      .catch(err => console.error(err));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!pergunta.trim() || !resposta.trim()) return;
+    
+    const categoriaFinal = categoriaSelecionada === 'NOVA' ? novaCategoria.trim() : categoriaSelecionada;
+    if (!categoriaFinal) {
+      alert("Por favor, selecione ou digite uma categoria.");
+      return;
+    }
     
     setLoading(true);
     try {
@@ -24,13 +45,18 @@ export default function ProfessoresPage() {
         body: JSON.stringify({
           pergunta,
           resposta,
-          categoria,
+          categoria: categoriaFinal,
           nomeProfessor
         })
       });
       alert('Pergunta cadastrada com sucesso!');
       setPergunta('');
       setResposta('');
+      if (categoriaSelecionada === 'NOVA') {
+        setCategoriasExistentes([...categoriasExistentes, categoriaFinal].sort());
+        setCategoriaSelecionada(categoriaFinal);
+        setNovaCategoria('');
+      }
     } catch (err) {
       alert('Erro ao cadastrar pergunta.');
     } finally {
@@ -77,12 +103,28 @@ export default function ProfessoresPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Público Alvo *</label>
-              <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-                <option value="EF">Ensino Fundamental (EF)</option>
-                <option value="EM">Ensino Médio (EM)</option>
-                <option value="Geral">Geral (Ambos)</option>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Disciplina/Categoria *</label>
+              <select 
+                value={categoriaSelecionada} 
+                onChange={(e) => setCategoriaSelecionada(e.target.value)}
+                required
+              >
+                {categoriasExistentes.map(cat => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+                <option value="NOVA">+ Criar nova categoria...</option>
               </select>
+              
+              {categoriaSelecionada === 'NOVA' && (
+                <input 
+                  type="text" 
+                  value={novaCategoria} 
+                  onChange={(e) => setNovaCategoria(e.target.value)}
+                  placeholder="Nome da nova categoria"
+                  required
+                  style={{ marginTop: '0.5rem' }}
+                />
+              )}
             </div>
 
             <div>

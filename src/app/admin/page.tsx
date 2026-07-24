@@ -12,16 +12,34 @@ interface Turma {
   _count: { alunos: number };
 }
 
+interface Pergunta {
+  id: string;
+  pergunta: string;
+  resposta: string;
+  categoria: string;
+}
+
 export default function AdminPage() {
   const [turmas, setTurmas] = useState<Turma[]>([]);
+  const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
+  
   const [novaTurma, setNovaTurma] = useState('');
   const [pontosPorRodada, setPontosPorRodada] = useState(10);
   const [loading, setLoading] = useState(true);
+
+  // Controle de estado para as categorias expandidas
+  const [categoriasExpandidas, setCategoriasExpandidas] = useState<string[]>([]);
 
   const fetchTurmas = async () => {
     const res = await fetch('/api/classes');
     const data = await res.json();
     setTurmas(data);
+  };
+
+  const fetchPerguntas = async () => {
+    const res = await fetch('/api/questions');
+    const data = await res.json();
+    setPerguntas(data);
   };
 
   const fetchSettings = async () => {
@@ -33,6 +51,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     fetchTurmas();
+    fetchPerguntas();
     fetchSettings();
   }, []);
 
@@ -64,10 +83,70 @@ export default function AdminPage() {
     fetchTurmas();
   };
 
+  // Funções de Categorias
+  const handleEditCategoria = async (oldName: string) => {
+    const newName = prompt(`Novo nome para a categoria "${oldName}":`, oldName);
+    if (!newName || newName.trim() === '' || newName === oldName) return;
+    
+    if (confirm(`Tem certeza? Isso atualizará todas as perguntas da categoria "${oldName}".`)) {
+      await fetch('/api/categories', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ oldName, newName: newName.trim() })
+      });
+      fetchPerguntas();
+    }
+  };
+
+  const handleDeleteCategoria = async (name: string) => {
+    if (confirm(`ATENÇÃO! Tem certeza que deseja excluir a categoria "${name}" e TODAS as suas perguntas? Essa ação não pode ser desfeita.`)) {
+      await fetch(`/api/categories?name=${encodeURIComponent(name)}`, { method: 'DELETE' });
+      fetchPerguntas();
+    }
+  };
+
+  const toggleCategoria = (name: string) => {
+    setCategoriasExpandidas(prev => 
+      prev.includes(name) ? prev.filter(c => c !== name) : [...prev, name]
+    );
+  };
+
+  // Funções de Perguntas
+  const handleEditPergunta = async (pergunta: Pergunta) => {
+    const novaPergunta = prompt('Edite a pergunta:', pergunta.pergunta);
+    if (novaPergunta === null) return;
+    
+    const novaResposta = prompt('Edite a resposta:', pergunta.resposta);
+    if (novaResposta === null) return;
+    
+    await fetch(`/api/questions/${pergunta.id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...pergunta, pergunta: novaPergunta, resposta: novaResposta })
+    });
+    fetchPerguntas();
+  };
+
+  const handleDeletePergunta = async (id: string) => {
+    if (confirm('Deseja excluir esta pergunta?')) {
+      await fetch(`/api/questions/${id}`, { method: 'DELETE' });
+      fetchPerguntas();
+    }
+  };
+
+  // Agrupando perguntas por categoria
+  const categoriasMap = perguntas.reduce((acc, curr) => {
+    if (!acc[curr.categoria]) acc[curr.categoria] = [];
+    acc[curr.categoria].push(curr);
+    return acc;
+  }, {} as Record<string, Pergunta[]>);
+  
+  const categorias = Object.keys(categoriasMap).sort();
+
   if (loading) return <div className="p-8 text-center">Carregando...</div>;
 
   return (
-    <div className="p-8 max-w-4xl mx-auto animate-fade-in">
+    <div className="p-8 max-w-4xl mx-auto animate-fade-in pb-16">
       <div className="flex justify-between items-center mb-8">
         <h1>Painel Admin</h1>
         <Link href="/">
@@ -119,7 +198,7 @@ export default function AdminPage() {
               <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
                 Link de Inscrição: <br/>
                 <a href={`/turma/${turma.id}`} target="_blank" style={{ color: 'var(--secondary)' }}>
-                  {window.location.origin}/turma/{turma.id}
+                  {typeof window !== 'undefined' ? window.location.origin : ''}/turma/{turma.id}
                 </a>
               </div>
             </div>
@@ -128,12 +207,60 @@ export default function AdminPage() {
             </Button>
           </Card>
         ))}
-        
-        {turmas.length === 0 && (
-          <p style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>
-            Nenhuma turma cadastrada ainda.
-          </p>
-        )}
+        {turmas.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>}
+      </div>
+
+      <h2 style={{ marginTop: '4rem', marginBottom: '1.5rem' }}>Banco de Perguntas e Categorias</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {categorias.map(cat => {
+          const catPerguntas = categoriasMap[cat];
+          const isExpanded = categoriasExpandidas.includes(cat);
+          
+          return (
+            <Card key={cat} style={{ padding: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ cursor: 'pointer', flex: 1 }} onClick={() => toggleCategoria(cat)}>
+                  <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    {isExpanded ? '▼' : '▶'} {cat}
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>
+                      ({catPerguntas.length} perguntas)
+                    </span>
+                  </h3>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <Button variant="secondary" onClick={() => handleEditCategoria(cat)} style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                    Editar
+                  </Button>
+                  <Button onClick={() => handleDeleteCategoria(cat)} style={{ background: 'var(--error)', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                    Excluir
+                  </Button>
+                </div>
+              </div>
+
+              {isExpanded && (
+                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {catPerguntas.map(p => (
+                    <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <div style={{ flex: 1, paddingRight: '1rem' }}>
+                        <p style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{p.pergunta}</p>
+                        <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
+                      </div>
+                      <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>
+                        <Button variant="secondary" onClick={() => handleEditPergunta(p)} style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
+                          Editar
+                        </Button>
+                        <Button onClick={() => handleDeletePergunta(p.id)} style={{ background: 'var(--error)', padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
+                          Excluir
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </Card>
+          );
+        })}
+        {categorias.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma pergunta cadastrada.</p>}
       </div>
     </div>
   );

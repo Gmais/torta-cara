@@ -31,6 +31,7 @@ export default function JogoPage() {
   const [rodada, setRodada] = useState(1);
   const [dueloIndex, setDueloIndex] = useState(0);
   const [pontosValendo, setPontosValendo] = useState(10);
+  const [historico, setHistorico] = useState<{turmaId: string, delta: number}[]>([]);
   
   // Estado Local (Não persistido)
   const [perguntaAtual, setPerguntaAtual] = useState<Pergunta | null>(null);
@@ -72,6 +73,7 @@ export default function JogoPage() {
           // Previne index out of bounds caso uma turma tenha sido excluída
           setDueloIndex(parsed.dueloIndex < novosDuelos.length ? parsed.dueloIndex : 0);
           setPontosValendo(parsed.pontosValendo || 10);
+          if (parsed.historico) setHistorico(parsed.historico);
         } catch(e) {}
       }
 
@@ -87,10 +89,11 @@ export default function JogoPage() {
       localStorage.setItem('torta_cara_gameState', JSON.stringify({
         rodada,
         dueloIndex,
-        pontosValendo
+        pontosValendo,
+        historico
       }));
     }
-  }, [rodada, dueloIndex, pontosValendo, loading]);
+  }, [rodada, dueloIndex, pontosValendo, historico, loading]);
 
   const handleSortear = async () => {
     setLoadingPergunta(true);
@@ -124,6 +127,11 @@ export default function JogoPage() {
     const novaPontuacao = operacao === 'add' 
       ? turma.pontuacao + pontosValendo 
       : Math.max(0, turma.pontuacao - pontosValendo);
+      
+    const delta = novaPontuacao - turma.pontuacao;
+    
+    // Salva no histórico para poder desfazer
+    setHistorico(prev => [...prev, { turmaId, delta }]);
 
     // Atualiza otimista (Reflete na tabela de duelos e no placar lateral)
     setTurmas(prev => prev.map(t => t.id === turmaId ? { ...t, pontuacao: novaPontuacao } : t).sort((a,b) => b.pontuacao - a.pontuacao));
@@ -158,10 +166,38 @@ export default function JogoPage() {
     }
   };
 
-  const dueloAnterior = () => {
+  const dueloAnterior = async () => {
     setPerguntaAtual(null);
     setMostrarResposta(false);
     
+    // Desfaz a pontuação do duelo anterior
+    if (historico.length > 0) {
+      const lastAction = historico[historico.length - 1];
+      const turma = turmas.find(t => t.id === lastAction.turmaId);
+      
+      if (turma) {
+        const pontuacaoRestaurada = turma.pontuacao - lastAction.delta;
+        
+        // Atualiza UI
+        setTurmas(prev => prev.map(t => t.id === turma.id ? { ...t, pontuacao: pontuacaoRestaurada } : t).sort((a,b) => b.pontuacao - a.pontuacao));
+        setDuelos(prev => prev.map(d => ({
+          t1: d.t1.id === turma.id ? { ...d.t1, pontuacao: pontuacaoRestaurada } : d.t1,
+          t2: d.t2.id === turma.id ? { ...d.t2, pontuacao: pontuacaoRestaurada } : d.t2,
+        })));
+        
+        // Atualiza API
+        fetch(`/api/classes/${turma.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pontuacao: pontuacaoRestaurada })
+        });
+      }
+      
+      // Remove do histórico
+      setHistorico(prev => prev.slice(0, -1));
+    }
+    
+    // Retrocede o índice
     if (dueloIndex > 0) {
       setDueloIndex(i => i - 1);
     } else if (rodada > 1) {
@@ -316,20 +352,14 @@ export default function JogoPage() {
           </Card>
 
           {/* Botões de Navegação dos Duelos */}
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', justifyContent: 'center' }}>
             <Button 
               onClick={dueloAnterior} 
               variant="secondary"
-              style={{ padding: '1.5rem', fontSize: '1.2rem', flex: 1 }}
+              style={{ padding: '1.5rem', fontSize: '1.2rem', minWidth: '300px' }}
               disabled={rodada === 1 && dueloIndex === 0}
             >
-              ⬅ Voltar Duelo
-            </Button>
-            <Button 
-              onClick={proximoDuelo} 
-              style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'var(--accent)', flex: 2 }}
-            >
-              {dueloIndex + 1 >= duelos.length ? 'Finalizar Rodada e Avançar ➔' : 'Chamar Próximo Duelo ➔'}
+              ⬅ Voltar ao Duelo Anterior (Desfazer)
             </Button>
           </div>
 

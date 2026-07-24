@@ -158,6 +158,18 @@ export default function JogoPage() {
     }
   };
 
+  const dueloAnterior = () => {
+    setPerguntaAtual(null);
+    setMostrarResposta(false);
+    
+    if (dueloIndex > 0) {
+      setDueloIndex(i => i - 1);
+    } else if (rodada > 1) {
+      setRodada(r => r - 1);
+      setDueloIndex(duelos.length - 1);
+    }
+  };
+
   if (loading) return <div className="p-8 text-center">Carregando Jogo...</div>;
 
   if (turmas.length < 2) {
@@ -180,9 +192,6 @@ export default function JogoPage() {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 style={{ marginBottom: '0.2rem' }}>Ao Vivo: Torta na Cara</h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>
-            Rodada {rodada} | Duelo {dueloIndex + 1} de {duelos.length}
-          </p>
         </div>
         
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -219,8 +228,13 @@ export default function JogoPage() {
               </div>
 
               {/* VS */}
-              <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--accent)', margin: '0 2rem', fontStyle: 'italic', opacity: isTransitioning ? 0.5 : 1 }}>
-                VS
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 1rem', opacity: isTransitioning ? 0.5 : 1 }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '1rem', fontWeight: 'bold', marginBottom: '-0.5rem', background: 'rgba(255,255,255,0.1)', padding: '0.25rem 0.75rem', borderRadius: '99px' }}>
+                  Rodada {rodada} | Duelo {dueloIndex + 1} de {duelos.length}
+                </span>
+                <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--accent)', fontStyle: 'italic' }}>
+                  VS
+                </div>
               </div>
 
               {/* Equipe 2 */}
@@ -301,13 +315,23 @@ export default function JogoPage() {
             )}
           </Card>
 
-          {/* Botão de Avançar Duelo */}
-          <Button 
-            onClick={proximoDuelo} 
-            style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'var(--accent)', marginTop: '1rem' }}
-          >
-            {dueloIndex + 1 >= duelos.length ? 'Finalizar Rodada e Avançar' : 'Chamar Próximo Duelo ➔'}
-          </Button>
+          {/* Botões de Navegação dos Duelos */}
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+            <Button 
+              onClick={dueloAnterior} 
+              variant="secondary"
+              style={{ padding: '1.5rem', fontSize: '1.2rem', flex: 1 }}
+              disabled={rodada === 1 && dueloIndex === 0}
+            >
+              ⬅ Voltar Duelo
+            </Button>
+            <Button 
+              onClick={proximoDuelo} 
+              style={{ padding: '1.5rem', fontSize: '1.2rem', background: 'var(--accent)', flex: 2 }}
+            >
+              {dueloIndex + 1 >= duelos.length ? 'Finalizar Rodada e Avançar ➔' : 'Chamar Próximo Duelo ➔'}
+            </Button>
+          </div>
 
         </div>
 

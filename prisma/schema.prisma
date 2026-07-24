@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Turma {
+  id        String        @id @default(uuid())
+  nome      String        @unique
+  pontuacao Int           @default(0)
+  alunos    Participante[]
+}
+
+model Participante {
+  id      String @id @default(uuid())
+  nome    String
+  turmaId String
+  turma   Turma  @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+}
+
+model Pergunta {
+  id            String  @id @default(uuid())
+  pergunta      String
+  resposta      String
+  categoria     String  // e.g., "EF", "EM", "Séries e Filmes", etc.
+  nomeProfessor String? // Opcional, caso venha de um professor
+  createdAt     DateTime @default(now())
+}
+
+model Configuracao {
+  id              String @id @default("singleton")
+  pontosPorRodada Int    @default(10)
+}

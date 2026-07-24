@@ -42,7 +42,7 @@ export default function JogoPage() {
   const [rodada, setRodada] = useState(1);
   const [dueloIndex, setDueloIndex] = useState(0);
   const [pontosValendo, setPontosValendo] = useState(10);
-  const [historico, setHistorico] = useState<{turmaId: string, delta: number}[]>([]);
+  const [historico, setHistorico] = useState<any[]>([]);
   const [alunosSorteados, setAlunosSorteados] = useState<Record<string, string[]>>({});
   
   // Estado Local (Não persistido)
@@ -207,27 +207,69 @@ export default function JogoPage() {
     
     setIsTransitioning(true);
     
+    const dueloAtual = duelos[dueloIndex];
+    const isT1 = dueloAtual.t1.id === turmaId;
+    const turmaAdvId = isT1 ? dueloAtual.t2.id : dueloAtual.t1.id;
+    const turmaAdv = turmas.find(t => t.id === turmaAdvId);
+
+    const changes: { turmaId: string, delta: number }[] = [];
+    
+    // Calcula mudança da turma principal
     const novaPontuacao = operacao === 'add' 
       ? turma.pontuacao + pontosValendo 
       : Math.max(0, turma.pontuacao - pontosValendo);
-      
     const delta = novaPontuacao - turma.pontuacao;
+    if (delta !== 0) changes.push({ turmaId: turma.id, delta });
+
+    // Calcula mudança da turma adversária (ganha metade se a principal errou)
+    let novaPontuacaoAdv = turmaAdv?.pontuacao || 0;
+    if (operacao === 'sub' && turmaAdv) {
+      const pontosGanhoAdv = Math.round(pontosValendo / 2);
+      novaPontuacaoAdv = turmaAdv.pontuacao + pontosGanhoAdv;
+      const deltaAdv = novaPontuacaoAdv - turmaAdv.pontuacao;
+      if (deltaAdv !== 0) changes.push({ turmaId: turmaAdv.id, delta: deltaAdv });
+    }
     
-    // Salva no histórico para poder desfazer
-    setHistorico(prev => [...prev, { turmaId, delta }]);
+    // Salva no histórico para poder desfazer (novo formato suportando múltiplas mudanças)
+    setHistorico(prev => [...prev, { changes }]);
 
     // Atualiza otimista (Reflete na tabela de duelos e no placar lateral)
-    setTurmas(prev => prev.map(t => t.id === turmaId ? { ...t, pontuacao: novaPontuacao } : t).sort((a,b) => b.pontuacao - a.pontuacao));
-    setDuelos(prev => prev.map(d => ({
-      t1: d.t1.id === turmaId ? { ...d.t1, pontuacao: novaPontuacao } : d.t1,
-      t2: d.t2.id === turmaId ? { ...d.t2, pontuacao: novaPontuacao } : d.t2,
-    })));
-    
-    await fetch(`/api/classes/${turmaId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pontuacao: novaPontuacao })
+    setTurmas(prev => {
+      let newTurmas = [...prev];
+      if (delta !== 0) newTurmas = newTurmas.map(t => t.id === turma.id ? { ...t, pontuacao: novaPontuacao } : t);
+      if (operacao === 'sub' && turmaAdv) newTurmas = newTurmas.map(t => t.id === turmaAdv.id ? { ...t, pontuacao: novaPontuacaoAdv } : t);
+      return newTurmas.sort((a,b) => b.pontuacao - a.pontuacao);
     });
+    
+    setDuelos(prev => prev.map(d => {
+      let newT1 = d.t1;
+      let newT2 = d.t2;
+      if (d.t1.id === turma.id) newT1 = { ...d.t1, pontuacao: novaPontuacao };
+      else if (operacao === 'sub' && d.t1.id === turmaAdvId) newT1 = { ...d.t1, pontuacao: novaPontuacaoAdv };
+      
+      if (d.t2.id === turma.id) newT2 = { ...d.t2, pontuacao: novaPontuacao };
+      else if (operacao === 'sub' && d.t2.id === turmaAdvId) newT2 = { ...d.t2, pontuacao: novaPontuacaoAdv };
+      
+      return { t1: newT1, t2: newT2 };
+    }));
+    
+    // Dispara requests em paralelo
+    const requests = [];
+    if (delta !== 0) {
+      requests.push(fetch(`/api/classes/${turma.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pontuacao: novaPontuacao })
+      }));
+    }
+    if (operacao === 'sub' && turmaAdv) {
+      requests.push(fetch(`/api/classes/${turmaAdv.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pontuacao: novaPontuacaoAdv })
+      }));
+    }
+    await Promise.all(requests);
     
     // Passa automaticamente para o próximo duelo após 1.5 segundos
     setTimeout(() => {
@@ -274,24 +316,37 @@ export default function JogoPage() {
     // Desfaz a pontuação do duelo anterior
     if (historico.length > 0) {
       const lastAction = historico[historico.length - 1];
-      const turma = turmas.find(t => t.id === lastAction.turmaId);
       
-      if (turma) {
-        const pontuacaoRestaurada = turma.pontuacao - lastAction.delta;
+      const changesToUndo: { turmaId: string, delta: number }[] = lastAction.changes 
+        ? lastAction.changes // Novo formato
+        : [{ turmaId: lastAction.turmaId, delta: lastAction.delta }]; // Formato antigo
         
-        // Atualiza UI
-        setTurmas(prev => prev.map(t => t.id === turma.id ? { ...t, pontuacao: pontuacaoRestaurada } : t).sort((a,b) => b.pontuacao - a.pontuacao));
-        setDuelos(prev => prev.map(d => ({
-          t1: d.t1.id === turma.id ? { ...d.t1, pontuacao: pontuacaoRestaurada } : d.t1,
-          t2: d.t2.id === turma.id ? { ...d.t2, pontuacao: pontuacaoRestaurada } : d.t2,
-        })));
+      if (changesToUndo.length > 0) {
+        let newTurmas = [...turmas];
+        let newDuelos = [...duelos];
         
-        // Atualiza API
-        fetch(`/api/classes/${turma.id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ pontuacao: pontuacaoRestaurada })
-        });
+        for (const change of changesToUndo) {
+          const turma = newTurmas.find(t => t.id === change.turmaId);
+          if (turma) {
+            const pontuacaoRestaurada = Math.max(0, turma.pontuacao - change.delta);
+            
+            newTurmas = newTurmas.map(t => t.id === turma.id ? { ...t, pontuacao: pontuacaoRestaurada } : t);
+            newDuelos = newDuelos.map(d => ({
+              t1: d.t1.id === turma.id ? { ...d.t1, pontuacao: pontuacaoRestaurada } : d.t1,
+              t2: d.t2.id === turma.id ? { ...d.t2, pontuacao: pontuacaoRestaurada } : d.t2,
+            }));
+            
+            // Atualiza API em background
+            fetch(`/api/classes/${turma.id}`, {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ pontuacao: pontuacaoRestaurada })
+            });
+          }
+        }
+        
+        setTurmas(newTurmas.sort((a,b) => b.pontuacao - a.pontuacao));
+        setDuelos(newDuelos);
       }
       
       // Remove do histórico

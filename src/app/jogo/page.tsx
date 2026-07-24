@@ -206,6 +206,29 @@ export default function JogoPage() {
     }
   };
 
+  const handleReset = async () => {
+    if (confirm("Tem certeza que deseja zerar a pontuação de todas as equipes? O jogo e os duelos também voltarão para o início.")) {
+      // Atualiza estado local
+      setTurmas(prev => prev.map(t => ({ ...t, pontuacao: 0 })));
+      setDuelos(prev => prev.map(d => ({
+        t1: { ...d.t1, pontuacao: 0 },
+        t2: { ...d.t2, pontuacao: 0 },
+      })));
+      setRodada(1);
+      setDueloIndex(0);
+      setHistorico([]);
+      setPerguntaAtual(null);
+      setMostrarResposta(false);
+      
+      // Atualiza banco de dados
+      await Promise.all(turmas.map(t => fetch(`/api/classes/${t.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pontuacao: 0 })
+      })));
+    }
+  };
+
   if (loading) return <div className="p-8 text-center">Carregando Jogo...</div>;
 
   if (turmas.length < 2) {
@@ -365,12 +388,29 @@ export default function JogoPage() {
 
         </div>
 
-        {/* Placar Global (Read-only agora, os botões foram pro duelo) */}
+        {/* Placar Global */}
         <div>
           <Card style={{ height: '100%' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--glass-border)' }}>
-              Placar Geral
-            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--glass-border)' }}>
+              <h2 style={{ margin: 0, marginBottom: '0.5rem' }}>Placar Geral</h2>
+              <button 
+                onClick={handleReset} 
+                style={{ 
+                  background: 'none', 
+                  border: '1px solid rgba(244, 63, 94, 0.5)', 
+                  color: 'var(--error)', 
+                  padding: '0.25rem 0.75rem', 
+                  borderRadius: '99px', 
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.background = 'rgba(244, 63, 94, 0.1)'}
+                onMouseOut={(e) => e.currentTarget.style.background = 'none'}
+              >
+                Resetar Partida
+              </button>
+            </div>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {turmas.map((turma, index) => {

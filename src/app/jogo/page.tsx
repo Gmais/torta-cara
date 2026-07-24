@@ -54,6 +54,7 @@ export default function JogoPage() {
   const [loading, setLoading] = useState(true);
   const [loadingPergunta, setLoadingPergunta] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   
   // Categorias para o filtro
   const [categorias, setCategorias] = useState<string[]>([]);
@@ -148,6 +149,26 @@ export default function JogoPage() {
       ...prev,
       [turma.id]: [...novosSorteados, sorteado.id]
     }));
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.log(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
   };
 
   const handleSortear = async () => {
@@ -382,6 +403,9 @@ export default function JogoPage() {
             />
             <span style={{ fontWeight: 'bold' }}>pontos</span>
           </div>
+          <Button variant="secondary" onClick={toggleFullScreen}>
+            {isFullscreen ? 'Sair da Tela Cheia' : 'Tela Cheia'}
+          </Button>
           <Button variant="secondary" onClick={() => setCompeticaoAtiva(null)}>Trocar Competição</Button>
           <Link href="/">
             <Button variant="secondary">Sair</Button>

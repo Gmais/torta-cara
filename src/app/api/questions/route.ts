@@ -38,6 +38,7 @@ export async function POST(request: Request) {
         resposta: data.resposta,
         categoria: data.categoria,
         nomeProfessor: data.nomeProfessor || null,
+        dificuldades: data.dificuldades || [],
       }
     });
     return NextResponse.json(newQuestion, { status: 201 });

@@ -24,7 +24,12 @@ interface Pergunta {
   pergunta: string;
   resposta: string;
   categoria: string;
+  dificuldades: string[];
 }
+
+const NIVEIS_DIFICULDADE = ['Facil', 'Moderado', 'Dificil'] as const;
+const NIVEL_LABEL: Record<string, string> = { Facil: 'Fácil', Moderado: 'Moderado', Dificil: 'Difícil' };
+const NIVEL_COR: Record<string, string> = { Facil: 'var(--success)', Moderado: '#f59e0b', Dificil: 'var(--error)' };
 
 export default function AdminPage() {
   const [autenticado, setAutenticado] = useState(false);
@@ -213,6 +218,21 @@ export default function AdminPage() {
       body: JSON.stringify({ ...pergunta, pergunta: novaPergunta, resposta: novaResposta })
     });
     fetchPerguntas();
+  };
+
+  const handleToggleDificuldade = async (pergunta: Pergunta, nivel: string) => {
+    const atuais = pergunta.dificuldades || [];
+    const novaLista = atuais.includes(nivel)
+      ? atuais.filter(n => n !== nivel)
+      : [...atuais, nivel];
+
+    setPerguntas(prev => prev.map(p => p.id === pergunta.id ? { ...p, dificuldades: novaLista } : p));
+
+    await fetch(`/api/questions/${pergunta.id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...pergunta, dificuldades: novaLista })
+    });
   };
 
   const handleDeletePergunta = async (id: string) => {
@@ -431,6 +451,22 @@ export default function AdminPage() {
                       <div style={{ flex: 1, paddingRight: '1rem' }}>
                         <p style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{p.pergunta}</p>
                         <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+                          {NIVEIS_DIFICULDADE.map(nivel => (
+                            <label
+                              key={nivel}
+                              style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: NIVEL_COR[nivel], cursor: 'pointer' }}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={(p.dificuldades || []).includes(nivel)}
+                                onChange={() => handleToggleDificuldade(p, nivel)}
+                                style={{ accentColor: NIVEL_COR[nivel], width: '1rem', height: '1rem', cursor: 'pointer' }}
+                              />
+                              {NIVEL_LABEL[nivel]}
+                            </label>
+                          ))}
+                        </div>
                       </div>
                       <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>
                         <Button variant="secondary" onClick={() => handleEditPergunta(p)} style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>

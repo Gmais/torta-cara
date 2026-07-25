@@ -12,6 +12,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         pergunta: data.pergunta,
         resposta: data.resposta,
         categoria: data.categoria,
+        dificuldades: data.dificuldades,
       }
     });
     return NextResponse.json(updatedQuestion);

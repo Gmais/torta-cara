@@ -25,11 +25,12 @@ model Participante {
 }
 
 model Pergunta {
-  id            String  @id @default(uuid())
+  id            String   @id @default(uuid())
   pergunta      String
   resposta      String
-  categoria     String  // e.g., "EF", "EM", "Séries e Filmes", etc.
-  nomeProfessor String? // Opcional, caso venha de um professor
+  categoria     String   // e.g., "EF", "EM", "Séries e Filmes", etc.
+  nomeProfessor String?  // Opcional, caso venha de um professor
+  dificuldades  String[] @default([]) // "Facil", "Moderado", "Dificil" (pode ter mais de um)
   createdAt     DateTime @default(now())
 }
 

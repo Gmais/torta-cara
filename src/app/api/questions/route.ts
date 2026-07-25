@@ -5,22 +5,27 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const random = searchParams.get('random');
   const categoria = searchParams.get('categoria');
+  const dificuldade = searchParams.get('dificuldade');
+
+  const where = {
+    ...(categoria ? { categoria } : {}),
+    ...(dificuldade ? { dificuldades: { has: dificuldade } } : {}),
+  };
 
   try {
     if (random) {
       // Find a random question (could be optimized, but for SQLite this is fine)
-      const count = await prisma.pergunta.count({
-        where: categoria ? { categoria } : undefined
-      });
+      const count = await prisma.pergunta.count({ where });
       const skip = Math.floor(Math.random() * count);
       const question = await prisma.pergunta.findFirst({
-        where: categoria ? { categoria } : undefined,
+        where,
         skip,
       });
       return NextResponse.json(question);
     }
 
     const questions = await prisma.pergunta.findMany({
+      where,
       orderBy: { createdAt: 'desc' }
     });
     return NextResponse.json(questions);

@@ -23,7 +23,11 @@ interface Pergunta {
   pergunta: string;
   resposta: string;
   categoria: string;
+  dificuldades: string[];
 }
+
+const NIVEIS_DIFICULDADE = ['Facil', 'Moderado', 'Dificil'] as const;
+const NIVEL_LABEL: Record<string, string> = { Facil: 'Fácil', Moderado: 'Moderado', Dificil: 'Difícil' };
 
 interface Duelo {
   t1: Turma;
@@ -59,6 +63,7 @@ export default function JogoPage() {
   // Categorias para o filtro
   const [categorias, setCategorias] = useState<string[]>([]);
   const [categoriaFiltro, setCategoriaFiltro] = useState<string>(''); // '' = Aleatório
+  const [dificuldadeFiltro, setDificuldadeFiltro] = useState<string>(''); // '' = Aleatório
 
   // Carrega dados iniciais
   useEffect(() => {
@@ -175,10 +180,10 @@ export default function JogoPage() {
     setLoadingPergunta(true);
     setMostrarResposta(false);
     try {
-      const url = categoriaFiltro 
-        ? `/api/questions?random=true&categoria=${encodeURIComponent(categoriaFiltro)}`
-        : '/api/questions?random=true';
-      const res = await fetch(url);
+      const params = new URLSearchParams({ random: 'true' });
+      if (categoriaFiltro) params.set('categoria', categoriaFiltro);
+      if (dificuldadeFiltro) params.set('dificuldade', dificuldadeFiltro);
+      const res = await fetch(`/api/questions?${params.toString()}`);
       const data = await res.json();
       if (data && data.id) {
         setPerguntaAtual(data);
@@ -536,18 +541,18 @@ export default function JogoPage() {
           {/* Box da Pergunta */}
           <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '350px', position: 'relative' }}>
             
-            {/* Seletor de Categoria no topo do Card */}
-            <div style={{ position: 'absolute', top: '1rem', left: '0', right: '0', display: 'flex', justifyContent: 'center' }}>
-              <select 
-                value={categoriaFiltro} 
+            {/* Seletores de Categoria e Dificuldade no topo do Card */}
+            <div style={{ position: 'absolute', top: '1rem', left: '0', right: '0', display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <select
+                value={categoriaFiltro}
                 onChange={(e) => setCategoriaFiltro(e.target.value)}
-                style={{ 
-                  background: 'var(--primary)', 
-                  color: 'white', 
-                  border: 'none', 
-                  padding: '0.25rem 1rem', 
-                  borderRadius: '99px', 
-                  fontSize: '0.9rem', 
+                style={{
+                  background: 'var(--primary)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '0.25rem 1rem',
+                  borderRadius: '99px',
+                  fontSize: '0.9rem',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   outline: 'none',
@@ -556,6 +561,26 @@ export default function JogoPage() {
               >
                 <option value="">Modo Aleatório (Todas as Categorias)</option>
                 {categorias.map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+
+              <select
+                value={dificuldadeFiltro}
+                onChange={(e) => setDificuldadeFiltro(e.target.value)}
+                style={{
+                  background: 'var(--secondary)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '0.25rem 1rem',
+                  borderRadius: '99px',
+                  fontSize: '0.9rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  outline: 'none',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.2)'
+                }}
+              >
+                <option value="">Aleatório (Todos os Níveis)</option>
+                {NIVEIS_DIFICULDADE.map(n => <option key={n} value={n}>{NIVEL_LABEL[n]}</option>)}
               </select>
             </div>
 

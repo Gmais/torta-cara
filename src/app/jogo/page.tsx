@@ -542,11 +542,13 @@ export default function JogoPage() {
           <Card className="flex-1 flex flex-col items-center justify-center text-center" style={{ minHeight: '350px', position: 'relative' }}>
             
             {/* Seletores de Categoria e Dificuldade no topo do Card */}
-            <div style={{ position: 'absolute', top: '1rem', left: '0', right: '0', display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <div style={{ position: 'absolute', top: '1rem', left: '0', right: '0', display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap', padding: '0 1rem' }}>
               <select
                 value={categoriaFiltro}
                 onChange={(e) => setCategoriaFiltro(e.target.value)}
                 style={{
+                  width: 'auto',
+                  maxWidth: '260px',
                   background: 'var(--primary)',
                   color: 'white',
                   border: 'none',
@@ -567,6 +569,8 @@ export default function JogoPage() {
                 value={dificuldadeFiltro}
                 onChange={(e) => setDificuldadeFiltro(e.target.value)}
                 style={{
+                  width: 'auto',
+                  maxWidth: '220px',
                   background: 'var(--secondary)',
                   color: 'white',
                   border: 'none',

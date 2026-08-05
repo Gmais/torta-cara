@@ -4,7 +4,35 @@ const path = require('path')
 
 const prisma = new PrismaClient()
 
+const DISCIPLINAS = [
+  'Biologia/Ecologia',
+  'Anatomia/Fisiologia Humana',
+  'Química',
+  'Física',
+  'Astronomia',
+  'História',
+  'Geografia',
+  'Literatura/Português',
+  'Inglês',
+  'Matemática',
+  'Artes/Cultura/Cinema',
+  'Religião/Mitologia',
+  'Esportes',
+  'Medicina/Saúde',
+  'Informática/Tecnologia',
+  'Diversos/Geral',
+];
+
 async function main() {
+  for (const nome of DISCIPLINAS) {
+    await prisma.categoria.upsert({
+      where: { nome },
+      update: {},
+      create: { nome },
+    });
+  }
+  console.log(`${DISCIPLINAS.length} disciplinas garantidas na tabela Categoria.`);
+
   const filePath = path.join(__dirname, 'perguntas.json');
   const content = fs.readFileSync(filePath, 'utf-8');
   const questionsToInsert = JSON.parse(content);

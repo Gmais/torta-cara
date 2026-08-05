@@ -42844,5 +42844,185 @@
     "dificuldades": [
       "Facil"
     ]
+  },
+  {
+    "pergunta": "Qual é a principal língua falada em Turvo?",
+    "resposta": "Português.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a capital do Paraná?",
+    "resposta": "Curitiba.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do rio que deu origem ao nome do município?",
+    "resposta": "Rio Turvo.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a principal produção agrícola do município?",
+    "resposta": "Soja (também são importantes milho e feijão).",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Turvo possui uma população maior ou menor que 20 mil habitantes?",
+    "resposta": "Menor.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o bioma predominante da região de Turvo?",
+    "resposta": "Mata Atlântica (Floresta com Araucárias).",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual árvore é um símbolo do Paraná e também é encontrada na região de Turvo?",
+    "resposta": "Araucária (Pinheiro-do-Paraná).",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome da ave símbolo do Paraná?",
+    "resposta": "Gralha-azul.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual hemisfério está localizado Turvo?",
+    "resposta": "Hemisfério Sul.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual estação do ano costuma fazer mais frio em Turvo?",
+    "resposta": "Inverno.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que década Turvo foi emancipado politicamente?",
+    "resposta": "Década de 1980.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a altitude aproximada de Turvo?",
+    "resposta": "Cerca de 1.000 metros.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual povo indígena possui forte ligação histórica com a região de Turvo?",
+    "resposta": "Kaingang.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o clima predominante em Turvo?",
+    "resposta": "Clima subtropical.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual cidade é considerada o principal polo econômico próximo de Turvo?",
+    "resposta": "Guarapuava.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o principal tipo de floresta encontrado originalmente na região?",
+    "resposta": "Floresta Ombrófila Mista (Mata de Araucárias).",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual importante atividade econômica, além da agricultura, tem grande presença no município?",
+    "resposta": "Pecuária.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual rodovia estadual é uma das principais vias de acesso ao município?",
+    "resposta": "PR-466.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o nome do poder responsável por julgar conflitos e aplicar a Justiça?",
+    "resposta": "Poder Judiciário.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual importante árvore produz o pinhão, alimento típico da região?",
+    "resposta": "Araucária.",
+    "categoria": "Turvo",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
   }
 ]

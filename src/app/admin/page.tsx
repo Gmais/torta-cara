@@ -236,10 +236,20 @@ export default function AdminPage() {
   };
 
   const handleDeletePergunta = async (id: string) => {
-    if (confirm('Deseja excluir esta pergunta?')) {
-      await fetch(`/api/questions/${id}`, { method: 'DELETE' });
-      fetchPerguntas();
+    if (!confirm('Deseja excluir esta pergunta?')) return;
+
+    const res = await fetch(`/api/questions/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ excluidoPor: 'Admin' })
+    });
+
+    if (!res.ok) {
+      alert('Erro ao excluir a pergunta.');
+      return;
     }
+
+    fetchPerguntas();
   };
 
   // Agrupando perguntas por categoria

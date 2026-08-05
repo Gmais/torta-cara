@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 const DISCIPLINAS = [
   'Biologia/Ecologia',
   'Anatomia/Fisiologia Humana',
-  'Química',
+  'Ciências/Química',
   'Física',
   'Astronomia',
   'História',

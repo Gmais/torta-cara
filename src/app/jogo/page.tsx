@@ -47,7 +47,7 @@ export default function JogoPage() {
   const [dueloIndex, setDueloIndex] = useState(0);
   const [pontosValendo, setPontosValendo] = useState(10);
   const [historico, setHistorico] = useState<any[]>([]);
-  const [alunosSorteados, setAlunosSorteados] = useState<Record<string, string[]>>({});
+  const [alunosSorteados, setAlunosSorteados] = useState<Record<string, Record<string, number>>>({});
   
   // Estado Local (Não persistido)
   const [representanteT1, setRepresentanteT1] = useState<string | null>(null);
@@ -136,24 +136,27 @@ export default function JogoPage() {
       alert(`A turma ${turma.nome} não tem alunos cadastrados!`);
       return;
     }
-    const sorteados = alunosSorteados[turma.id] || [];
-    let disponiveis = turma.alunos.filter(a => !sorteados.includes(a.id));
-    
-    let novosSorteados = [...sorteados];
-    
-    // Se todos já foram, reseta a lista para não travar
-    if (disponiveis.length === 0) {
-      disponiveis = turma.alunos;
-      novosSorteados = [];
-    }
-    
-    const sorteado = disponiveis[Math.floor(Math.random() * disponiveis.length)];
+
+    // Sorteia sempre entre quem tem a MENOR quantidade de sorteios até agora.
+    // Um aluno só pode ser sorteado uma vez a mais (2ª, 3ª... vez) depois que
+    // todos os demais da equipe já tiverem alcançado essa mesma quantidade.
+    const contagem = alunosSorteados[turma.id] || {};
+    const menorContagem = Math.min(...turma.alunos.map(a => contagem[a.id] ?? 0));
+    const elegiveis = turma.alunos.filter(a => (contagem[a.id] ?? 0) === menorContagem);
+
+    const sorteado = elegiveis[Math.floor(Math.random() * elegiveis.length)];
     setRepresentante(sorteado.nome);
-    
-    setAlunosSorteados(prev => ({
-      ...prev,
-      [turma.id]: [...novosSorteados, sorteado.id]
-    }));
+
+    setAlunosSorteados(prev => {
+      const contagemAtual = prev[turma.id] || {};
+      return {
+        ...prev,
+        [turma.id]: {
+          ...contagemAtual,
+          [sorteado.id]: (contagemAtual[sorteado.id] ?? 0) + 1
+        }
+      };
+    });
   };
 
   useEffect(() => {
@@ -217,65 +220,35 @@ export default function JogoPage() {
     const turmaAdvId = isT1 ? dueloAtual.t2.id : dueloAtual.t1.id;
     const turmaAdv = turmas.find(t => t.id === turmaAdvId);
 
-    const changes: { turmaId: string, delta: number }[] = [];
-    
-    // Calcula mudança da turma principal
-    const novaPontuacao = operacao === 'add' 
-      ? turma.pontuacao + pontosValendo 
-      : Math.max(0, turma.pontuacao - pontosValendo);
-    const delta = novaPontuacao - turma.pontuacao;
-    if (delta !== 0) changes.push({ turmaId: turma.id, delta });
+    // Acerto: a própria equipe leva os pontos cheios da rodada.
+    // Erro: a equipe adversária leva os pontos cheios da rodada (quem errou não perde nada).
+    const turmaGanhadora = operacao === 'add' ? turma : turmaAdv;
 
-    // Calcula mudança da turma adversária (ganha metade se a principal errou)
-    let novaPontuacaoAdv = turmaAdv?.pontuacao || 0;
-    if (operacao === 'sub' && turmaAdv) {
-      const pontosGanhoAdv = Math.round(pontosValendo / 2);
-      novaPontuacaoAdv = turmaAdv.pontuacao + pontosGanhoAdv;
-      const deltaAdv = novaPontuacaoAdv - turmaAdv.pontuacao;
-      if (deltaAdv !== 0) changes.push({ turmaId: turmaAdv.id, delta: deltaAdv });
-    }
-    
-    // Salva no histórico para poder desfazer (novo formato suportando múltiplas mudanças)
+    const changes: { turmaId: string, delta: number }[] = [];
+    const novaPontuacao = turmaGanhadora ? turmaGanhadora.pontuacao + pontosValendo : 0;
+    if (turmaGanhadora) changes.push({ turmaId: turmaGanhadora.id, delta: pontosValendo });
+
+    // Salva no histórico para poder desfazer
     setHistorico(prev => [...prev, { changes }]);
 
-    // Atualiza otimista (Reflete na tabela de duelos e no placar lateral)
-    setTurmas(prev => {
-      let newTurmas = [...prev];
-      if (delta !== 0) newTurmas = newTurmas.map(t => t.id === turma.id ? { ...t, pontuacao: novaPontuacao } : t);
-      if (operacao === 'sub' && turmaAdv) newTurmas = newTurmas.map(t => t.id === turmaAdv.id ? { ...t, pontuacao: novaPontuacaoAdv } : t);
-      return newTurmas.sort((a,b) => b.pontuacao - a.pontuacao);
-    });
-    
-    setDuelos(prev => prev.map(d => {
-      let newT1 = d.t1;
-      let newT2 = d.t2;
-      if (d.t1.id === turma.id) newT1 = { ...d.t1, pontuacao: novaPontuacao };
-      else if (operacao === 'sub' && d.t1.id === turmaAdvId) newT1 = { ...d.t1, pontuacao: novaPontuacaoAdv };
-      
-      if (d.t2.id === turma.id) newT2 = { ...d.t2, pontuacao: novaPontuacao };
-      else if (operacao === 'sub' && d.t2.id === turmaAdvId) newT2 = { ...d.t2, pontuacao: novaPontuacaoAdv };
-      
-      return { t1: newT1, t2: newT2 };
-    }));
-    
-    // Dispara requests em paralelo
-    const requests = [];
-    if (delta !== 0) {
-      requests.push(fetch(`/api/classes/${turma.id}`, {
+    if (turmaGanhadora) {
+      // Atualiza otimista (Reflete na tabela de duelos e no placar lateral)
+      setTurmas(prev => prev
+        .map(t => t.id === turmaGanhadora.id ? { ...t, pontuacao: novaPontuacao } : t)
+        .sort((a, b) => b.pontuacao - a.pontuacao));
+
+      setDuelos(prev => prev.map(d => ({
+        t1: d.t1.id === turmaGanhadora.id ? { ...d.t1, pontuacao: novaPontuacao } : d.t1,
+        t2: d.t2.id === turmaGanhadora.id ? { ...d.t2, pontuacao: novaPontuacao } : d.t2,
+      })));
+
+      await fetch(`/api/classes/${turmaGanhadora.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pontuacao: novaPontuacao })
-      }));
+      });
     }
-    if (operacao === 'sub' && turmaAdv) {
-      requests.push(fetch(`/api/classes/${turmaAdv.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pontuacao: novaPontuacaoAdv })
-      }));
-    }
-    await Promise.all(requests);
-    
+
     // Passa automaticamente para o próximo duelo após 1.5 segundos
     setTimeout(() => {
       proximoDuelo();

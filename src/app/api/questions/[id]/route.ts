@@ -5,7 +5,12 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   try {
     const data = await request.json();
     const resolvedParams = await params;
-    
+
+    // Só registramos editadoPor/editadoEm quando a edição vem acompanhada do nome
+    // (fluxo do Banco de Perguntas do professor). Outras chamadas, como o toggle
+    // de dificuldade no admin, continuam funcionando sem exigir isso.
+    const editadoPor = typeof data.editadoPor === 'string' ? data.editadoPor.trim() : '';
+
     const updatedQuestion = await prisma.pergunta.update({
       where: { id: resolvedParams.id },
       data: {
@@ -13,6 +18,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         resposta: data.resposta,
         categoria: data.categoria,
         dificuldades: data.dificuldades,
+        ...(editadoPor ? { editadoPor, editadoEm: new Date() } : {}),
       }
     });
     return NextResponse.json(updatedQuestion);
@@ -24,6 +30,28 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const resolvedParams = await params;
+    const body = await request.json().catch(() => ({}));
+    const excluidoPor = typeof body.excluidoPor === 'string' ? body.excluidoPor.trim() : '';
+
+    if (!excluidoPor) {
+      return NextResponse.json({ error: 'Nome de quem está excluindo é obrigatório' }, { status: 400 });
+    }
+
+    const pergunta = await prisma.pergunta.findUnique({ where: { id: resolvedParams.id } });
+    if (!pergunta) {
+      return NextResponse.json({ error: 'Pergunta não encontrada' }, { status: 404 });
+    }
+
+    await prisma.perguntaExcluida.create({
+      data: {
+        perguntaId: pergunta.id,
+        pergunta: pergunta.pergunta,
+        resposta: pergunta.resposta,
+        categoria: pergunta.categoria,
+        excluidoPor,
+      }
+    });
+
     await prisma.pergunta.delete({
       where: { id: resolvedParams.id },
     });

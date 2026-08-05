@@ -27,6 +27,13 @@ interface Pergunta {
   dificuldades: string[];
 }
 
+interface EditDraft {
+  pergunta: string;
+  resposta: string;
+  categoria: string;
+  dificuldades: string[];
+}
+
 const NIVEIS_DIFICULDADE = ['Facil', 'Moderado', 'Dificil'] as const;
 const NIVEL_LABEL: Record<string, string> = { Facil: 'Fácil', Moderado: 'Moderado', Dificil: 'Difícil' };
 const NIVEL_COR: Record<string, string> = { Facil: 'var(--success)', Moderado: '#f59e0b', Dificil: 'var(--error)' };
@@ -49,6 +56,8 @@ export default function AdminPage() {
 
   // Controle de estado para as categorias expandidas
   const [categoriasExpandidas, setCategoriasExpandidas] = useState<string[]>([]);
+  const [editandoPerguntaId, setEditandoPerguntaId] = useState<string | null>(null);
+  const [editDraft, setEditDraft] = useState<EditDraft | null>(null);
 
   const fetchTurmas = async () => {
     const res = await fetch('/api/classes');
@@ -205,18 +214,50 @@ export default function AdminPage() {
   };
 
   // Funções de Perguntas
-  const handleEditPergunta = async (pergunta: Pergunta) => {
-    const novaPergunta = prompt('Edite a pergunta:', pergunta.pergunta);
-    if (novaPergunta === null) return;
-    
-    const novaResposta = prompt('Edite a resposta:', pergunta.resposta);
-    if (novaResposta === null) return;
-    
-    await fetch(`/api/questions/${pergunta.id}`, {
+  const iniciarEdicaoPergunta = (pergunta: Pergunta) => {
+    setEditandoPerguntaId(pergunta.id);
+    setEditDraft({
+      pergunta: pergunta.pergunta,
+      resposta: pergunta.resposta,
+      categoria: pergunta.categoria,
+      dificuldades: pergunta.dificuldades || [],
+    });
+  };
+
+  const cancelarEdicaoPergunta = () => {
+    setEditandoPerguntaId(null);
+    setEditDraft(null);
+  };
+
+  const toggleDificuldadeDraft = (nivel: string) => {
+    if (!editDraft) return;
+    const atuais = editDraft.dificuldades;
+    setEditDraft({
+      ...editDraft,
+      dificuldades: atuais.includes(nivel) ? atuais.filter(n => n !== nivel) : [...atuais, nivel],
+    });
+  };
+
+  const salvarEdicaoPergunta = async (id: string) => {
+    if (!editDraft) return;
+    if (!editDraft.pergunta.trim() || !editDraft.resposta.trim()) {
+      alert('Pergunta e resposta não podem ficar em branco.');
+      return;
+    }
+
+    const res = await fetch(`/api/questions/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...pergunta, pergunta: novaPergunta, resposta: novaResposta })
+      body: JSON.stringify({ ...editDraft, editadoPor: 'Admin' })
     });
+
+    if (!res.ok) {
+      alert('Erro ao salvar a edição.');
+      return;
+    }
+
+    setEditandoPerguntaId(null);
+    setEditDraft(null);
     fetchPerguntas();
   };
 
@@ -456,38 +497,94 @@ export default function AdminPage() {
 
               {isExpanded && (
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {catPerguntas.map(p => (
-                    <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <div style={{ flex: 1, paddingRight: '1rem' }}>
-                        <p style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{p.pergunta}</p>
-                        <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
-                        <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
-                          {NIVEIS_DIFICULDADE.map(nivel => (
-                            <label
-                              key={nivel}
-                              style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: NIVEL_COR[nivel], cursor: 'pointer' }}
+                  {catPerguntas.map(p => {
+                    const emEdicao = editandoPerguntaId === p.id && editDraft;
+
+                    if (emEdicao) {
+                      return (
+                        <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                          <div>
+                            <label style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.85rem', fontWeight: 600 }}>Pergunta</label>
+                            <textarea
+                              rows={2}
+                              value={editDraft.pergunta}
+                              onChange={(e) => setEditDraft({ ...editDraft, pergunta: e.target.value })}
+                            />
+                          </div>
+                          <div>
+                            <label style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.85rem', fontWeight: 600 }}>Resposta</label>
+                            <input
+                              type="text"
+                              value={editDraft.resposta}
+                              onChange={(e) => setEditDraft({ ...editDraft, resposta: e.target.value })}
+                            />
+                          </div>
+                          <div>
+                            <label style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.85rem', fontWeight: 600 }}>Categoria</label>
+                            <select
+                              value={editDraft.categoria}
+                              onChange={(e) => setEditDraft({ ...editDraft, categoria: e.target.value })}
                             >
-                              <input
-                                type="checkbox"
-                                checked={(p.dificuldades || []).includes(nivel)}
-                                onChange={() => handleToggleDificuldade(p, nivel)}
-                                style={{ accentColor: NIVEL_COR[nivel], width: '1rem', height: '1rem', cursor: 'pointer' }}
-                              />
-                              {NIVEL_LABEL[nivel]}
-                            </label>
-                          ))}
+                              {listaCategorias.map(c => <option key={c} value={c}>{c}</option>)}
+                            </select>
+                          </div>
+                          <div style={{ display: 'flex', gap: '1rem' }}>
+                            {NIVEIS_DIFICULDADE.map(nivel => (
+                              <label
+                                key={nivel}
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: NIVEL_COR[nivel], cursor: 'pointer' }}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={editDraft.dificuldades.includes(nivel)}
+                                  onChange={() => toggleDificuldadeDraft(nivel)}
+                                  style={{ accentColor: NIVEL_COR[nivel], width: '1rem', height: '1rem', cursor: 'pointer' }}
+                                />
+                                {NIVEL_LABEL[nivel]}
+                              </label>
+                            ))}
+                          </div>
+                          <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            <Button onClick={() => salvarEdicaoPergunta(p.id)} style={{ background: 'var(--success)' }}>Salvar</Button>
+                            <Button variant="secondary" onClick={cancelarEdicaoPergunta}>Cancelar</Button>
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ flex: 1, paddingRight: '1rem' }}>
+                          <p style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{p.pergunta}</p>
+                          <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
+                          <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+                            {NIVEIS_DIFICULDADE.map(nivel => (
+                              <label
+                                key={nivel}
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: NIVEL_COR[nivel], cursor: 'pointer' }}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={(p.dificuldades || []).includes(nivel)}
+                                  onChange={() => handleToggleDificuldade(p, nivel)}
+                                  style={{ accentColor: NIVEL_COR[nivel], width: '1rem', height: '1rem', cursor: 'pointer' }}
+                                />
+                                {NIVEL_LABEL[nivel]}
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>
+                          <Button variant="secondary" onClick={() => iniciarEdicaoPergunta(p)} style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
+                            Editar
+                          </Button>
+                          <Button onClick={() => handleDeletePergunta(p.id)} style={{ background: 'var(--error)', padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
+                            Excluir
+                          </Button>
                         </div>
                       </div>
-                      <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>
-                        <Button variant="secondary" onClick={() => handleEditPergunta(p)} style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
-                          Editar
-                        </Button>
-                        <Button onClick={() => handleDeletePergunta(p.id)} style={{ background: 'var(--error)', padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>
-                          Excluir
-                        </Button>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </Card>

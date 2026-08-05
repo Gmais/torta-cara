@@ -44,9 +44,14 @@ async function main() {
   // importação em massa sempre que o banco já tinha perguntas antigas.
   const existentes = await prisma.pergunta.findMany({ select: { pergunta: true } });
   const jaExistem = new Set(existentes.map(p => p.pergunta));
-  const novas = questionsToInsert.filter(q => !jaExistem.has(q.pergunta));
 
-  console.log(`${novas.length} perguntas novas a inserir (${questionsToInsert.length - novas.length} já existiam).`);
+  // Não recriar perguntas que já foram excluídas manualmente pelo admin/professor.
+  const excluidas = await prisma.perguntaExcluida.findMany({ select: { pergunta: true } });
+  const foramExcluidas = new Set(excluidas.map(p => p.pergunta));
+
+  const novas = questionsToInsert.filter(q => !jaExistem.has(q.pergunta) && !foramExcluidas.has(q.pergunta));
+
+  console.log(`${novas.length} perguntas novas a inserir (${questionsToInsert.length - novas.length} já existiam ou foram excluídas).`);
 
   for (const q of novas) {
     await prisma.pergunta.create({

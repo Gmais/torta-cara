@@ -43024,5 +43024,185 @@
       "Dificil"
     ],
     "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem foi a pessoa que deu nome ao colégio?",
+    "resposta": "Professora Edite Cordeiro Marques.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "A escola começou sua história aproximadamente em que década?",
+    "resposta": "Década de 1930 (aproximadamente em 1932).",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Antes de ser colégio, qual era o nome da instituição criada em 1971?",
+    "resposta": "Grupo Escolar do Distrito de Turvo.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano o Grupo Escolar passou a receber o nome de Professora Edite Cordeiro Marques?",
+    "resposta": "1975.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano o colégio foi oficialmente autorizado a funcionar como estabelecimento de ensino?",
+    "resposta": "1983.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Além dos estudantes da cidade, muitos alunos vêm de qual região?",
+    "resposta": "Da zona rural.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual meio de transporte muitos alunos utilizam para chegar ao colégio?",
+    "resposta": "Transporte escolar.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Além de estudantes urbanos, quais comunidades tradicionais também fazem parte da escola?",
+    "resposta": "Indígenas, quilombolas e faxinalenses.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano foi realizado o primeiro Minicenso Escolar no colégio?",
+    "resposta": "2011.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual era o objetivo principal do Minicenso Escolar?",
+    "resposta": "Conhecer melhor a realidade dos alunos e da comunidade escolar para melhorar o planejamento das ações pedagógicas.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Moderado"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Quem iniciou as primeiras aulas que deram origem à escola, em uma casa particular?",
+    "resposta": "Frida Rickli Naiverth.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano foi criada a Escola Pública Municipal do Rio Turvo?",
+    "resposta": "1938/1939.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual decreto criou o Grupo Escolar do Distrito de Turvo em 1971?",
+    "resposta": "Decreto nº 408.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em qual bairro está localizado o colégio?",
+    "resposta": "Jardim Filadélfia.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é o código INEP da escola?",
+    "resposta": "41106628.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual era o nome da escola criada em 1979 que depois teve suas atividades incorporadas ao Edite Cordeiro Marques?",
+    "resposta": "Escola Dr. João Ferreira Neves.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Em que ano a Escola Dr. João Ferreira Neves teve suas atividades suspensas?",
+    "resposta": "1982.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "O colégio pertence ao Núcleo Regional de Educação de qual cidade?",
+    "resposta": "Guarapuava.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual modelo de gestão a escola adota atualmente?",
+    "resposta": "Colégio Cívico-Militar.",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
+  },
+  {
+    "pergunta": "Qual é a mantenedora do colégio?",
+    "resposta": "Governo do Estado do Paraná (SEED-PR).",
+    "categoria": "CCM Edite",
+    "dificuldades": [
+      "Dificil"
+    ],
+    "nomeProfessor": "Sistema"
   }
 ]

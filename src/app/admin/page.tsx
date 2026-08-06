@@ -590,19 +590,24 @@ export default function AdminPage() {
                                 {NIVEL_LABEL[nivel]}
                               </label>
                             ))}
-                            {destacada && (
-                              <label
-                                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: COR_DESTAQUE, cursor: 'pointer' }}
-                              >
-                                <input
-                                  type="checkbox"
-                                  checked={false}
-                                  onChange={() => handleConferirPergunta(p.id)}
-                                  style={{ accentColor: COR_DESTAQUE, width: '1rem', height: '1rem', cursor: 'pointer' }}
-                                />
-                                Conferido
-                              </label>
-                            )}
+                            {destacada && (() => {
+                              const temDificuldade = (p.dificuldades || []).length > 0;
+                              return (
+                                <label
+                                  title={temDificuldade ? undefined : 'Selecione ao menos um nível de dificuldade antes de conferir'}
+                                  style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: COR_DESTAQUE, cursor: temDificuldade ? 'pointer' : 'not-allowed', opacity: temDificuldade ? 1 : 0.5 }}
+                                >
+                                  <input
+                                    type="checkbox"
+                                    checked={false}
+                                    disabled={!temDificuldade}
+                                    onChange={() => handleConferirPergunta(p.id)}
+                                    style={{ accentColor: COR_DESTAQUE, width: '1rem', height: '1rem', cursor: temDificuldade ? 'pointer' : 'not-allowed' }}
+                                  />
+                                  Conferido
+                                </label>
+                              );
+                            })()}
                           </div>
                         </div>
                         <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>

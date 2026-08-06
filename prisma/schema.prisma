@@ -35,6 +35,7 @@ model Pergunta {
   editadoEm     DateTime?
   createdAt     DateTime  @default(now())
   destaque      Boolean   @default(false) // marca perguntas migradas de Diversos/Geral: ficam amarelas e no topo da categoria
+  conferido     Boolean   @default(false) // admin ja revisou a pergunta amarela: some o destaque visual e o checkbox
 }
 
 // Registro de perguntas excluídas do banco, para saber quem excluiu o quê.

@@ -26,6 +26,11 @@ interface Pergunta {
   categoria: string;
   dificuldades: string[];
   destaque: boolean;
+  conferido: boolean;
+}
+
+function precisaConferencia(p: Pergunta): boolean {
+  return (p.categoria === 'Diversos/Geral' || p.destaque) && !p.conferido;
 }
 
 interface EditDraft {
@@ -278,6 +283,16 @@ export default function AdminPage() {
     });
   };
 
+  const handleConferirPergunta = async (id: string) => {
+    setPerguntas(prev => prev.map(p => p.id === id ? { ...p, conferido: true } : p));
+
+    await fetch(`/api/questions/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ conferido: true })
+    });
+  };
+
   const handleDeletePergunta = async (id: string) => {
     if (!confirm('Deseja excluir esta pergunta?')) return;
 
@@ -473,7 +488,7 @@ export default function AdminPage() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {categorias.map(cat => {
-          const catPerguntas = [...(categoriasMap[cat] || [])].sort((a, b) => Number(b.destaque) - Number(a.destaque));
+          const catPerguntas = [...(categoriasMap[cat] || [])].sort((a, b) => Number(precisaConferencia(b)) - Number(precisaConferencia(a)));
           const isExpanded = categoriasExpandidas.includes(cat);
           
           return (
@@ -501,6 +516,7 @@ export default function AdminPage() {
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {catPerguntas.map(p => {
                     const emEdicao = editandoPerguntaId === p.id && editDraft;
+                    const destacada = precisaConferencia(p);
 
                     if (emEdicao) {
                       return (
@@ -557,9 +573,9 @@ export default function AdminPage() {
                     return (
                       <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{ flex: 1, paddingRight: '1rem' }}>
-                          <p style={{ fontWeight: 'bold', marginBottom: '0.25rem', color: p.destaque ? COR_DESTAQUE : undefined }}>{p.pergunta}</p>
+                          <p style={{ fontWeight: 'bold', marginBottom: '0.25rem', color: destacada ? COR_DESTAQUE : undefined }}>{p.pergunta}</p>
                           <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
-                          <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+                          <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                             {NIVEIS_DIFICULDADE.map(nivel => (
                               <label
                                 key={nivel}
@@ -574,6 +590,19 @@ export default function AdminPage() {
                                 {NIVEL_LABEL[nivel]}
                               </label>
                             ))}
+                            {destacada && (
+                              <label
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: COR_DESTAQUE, cursor: 'pointer' }}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={false}
+                                  onChange={() => handleConferirPergunta(p.id)}
+                                  style={{ accentColor: COR_DESTAQUE, width: '1rem', height: '1rem', cursor: 'pointer' }}
+                                />
+                                Conferido
+                              </label>
+                            )}
                           </div>
                         </div>
                         <div style={{ display: 'flex', gap: '0.5rem', flexDirection: 'column' }}>

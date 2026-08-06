@@ -19,6 +19,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         categoria: data.categoria,
         dificuldades: data.dificuldades,
         ...(editadoPor ? { editadoPor, editadoEm: new Date() } : {}),
+        ...(typeof data.conferido === 'boolean' ? { conferido: data.conferido } : {}),
       }
     });
     return NextResponse.json(updatedQuestion);

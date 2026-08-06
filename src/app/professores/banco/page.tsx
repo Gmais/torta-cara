@@ -63,20 +63,6 @@ export default function BancoDePerguntasPage() {
     });
   };
 
-  const toggleSelecionarCategoria = (catPerguntas: Pergunta[]) => {
-    const idsCategoria = catPerguntas.map(p => p.id);
-    const todasSelecionadas = idsCategoria.every(id => selecionadas.has(id));
-    setSelecionadas(prev => {
-      const next = new Set(prev);
-      if (todasSelecionadas) {
-        idsCategoria.forEach(id => next.delete(id));
-      } else {
-        idsCategoria.forEach(id => next.add(id));
-      }
-      return next;
-    });
-  };
-
   const iniciarEdicao = (p: Pergunta) => {
     setEditingId(p.id);
     setEditDraft({
@@ -217,7 +203,6 @@ export default function BancoDePerguntasPage() {
         {categorias.map(cat => {
           const catPerguntas = categoriasMap[cat] || [];
           const isExpanded = categoriasExpandidas.includes(cat);
-          const todasSelecionadas = catPerguntas.length > 0 && catPerguntas.every(p => selecionadas.has(p.id));
 
           return (
             <Card key={cat} style={{ padding: '1rem' }}>
@@ -230,16 +215,6 @@ export default function BancoDePerguntasPage() {
                     </span>
                   </h3>
                 </div>
-                {catPerguntas.length > 0 && (
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--text-muted)', cursor: 'pointer' }}>
-                    <input
-                      type="checkbox"
-                      checked={todasSelecionadas}
-                      onChange={() => toggleSelecionarCategoria(catPerguntas)}
-                    />
-                    Selecionar todas
-                  </label>
-                )}
               </div>
 
               {isExpanded && (

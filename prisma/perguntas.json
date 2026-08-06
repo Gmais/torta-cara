@@ -2402,7 +2402,7 @@
   {
     "pergunta": "Lacrau é o mesmo que:",
     "resposta": "Escorpião",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -2897,7 +2897,7 @@
   {
     "pergunta": "O termo \"alísios\" refere-se à corrente de:",
     "resposta": "Ventos",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6605,7 +6605,7 @@
   {
     "pergunta": "A palavra artolatria refere-se à adoração de:",
     "resposta": "Pães",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6614,7 +6614,7 @@
   {
     "pergunta": "A palavra \"cúspide\" refere-se a quê?",
     "resposta": "Ponta",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6641,7 +6641,7 @@
   {
     "pergunta": "Dispor os fios de tela é o mesmo que:",
     "resposta": "Urdir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6650,7 +6650,7 @@
   {
     "pergunta": "Damejar é o mesmo que:",
     "resposta": "Cortejar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6659,7 +6659,7 @@
   {
     "pergunta": "Amplexo é o mesmo que:",
     "resposta": "Abraço",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6731,7 +6731,7 @@
   {
     "pergunta": "Encetar é o mesmo que....",
     "resposta": "Começar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6749,7 +6749,7 @@
   {
     "pergunta": "Esmorecer é o mesmo que:",
     "resposta": "Desanimar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6821,7 +6821,7 @@
   {
     "pergunta": "Qual desses é um escritor português?",
     "resposta": "Luís de camões",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6893,7 +6893,7 @@
   {
     "pergunta": "O adjetivo leporino refere-se á:",
     "resposta": "Lebre",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -6902,7 +6902,7 @@
   {
     "pergunta": "O adjetivo \"aquilino\" refere-se à:",
     "resposta": "Águia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -7595,7 +7595,7 @@
   {
     "pergunta": "Dióspiro é o mesmo que:",
     "resposta": "Caqui",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -7838,7 +7838,7 @@
   {
     "pergunta": "No corpo humano, onde estão localizadas as pálpebras?",
     "resposta": "Olhos",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8018,7 +8018,7 @@
   {
     "pergunta": "Formicida é um composto químico para matar o quê?",
     "resposta": "Formigas",
-    "categoria": "Diversos/Geral",
+    "categoria": "Ciências/Química",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8036,7 +8036,7 @@
   {
     "pergunta": "O ato de introduzir o ar nos pulmões é chamado:",
     "resposta": "Inspiração",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8108,7 +8108,7 @@
   {
     "pergunta": "Qual animal não é uma ave?",
     "resposta": "Joaninha",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8135,7 +8135,7 @@
   {
     "pergunta": "O que é via láctea?",
     "resposta": "Galáxia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8333,7 +8333,7 @@
   {
     "pergunta": "A miopia é uma deficiência de qual sentido?",
     "resposta": "Visão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8351,7 +8351,7 @@
   {
     "pergunta": "A laranja é rica em qual tipo de vitamina?",
     "resposta": "Vitamina c",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8495,7 +8495,7 @@
   {
     "pergunta": "Como se chama a reação hipersensível a certas substâncias?",
     "resposta": "Alergia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8747,7 +8747,7 @@
   {
     "pergunta": "Qual é o habitat das lagostas?",
     "resposta": "Mares",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -8891,7 +8891,7 @@
   {
     "pergunta": "Quando o médico receita um remédio via oral, as pessoas devem tomar:",
     "resposta": "Pela boca",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -9071,7 +9071,7 @@
   {
     "pergunta": "Qual o réptil que muda de cor conforme o ambiente e o meio onde vive?",
     "resposta": "Camaleão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -9089,7 +9089,7 @@
   {
     "pergunta": "Qual é a origem das abelhas-africanas?",
     "resposta": "África",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -9143,7 +9143,7 @@
   {
     "pergunta": "Qual desses nomes não é relativo ao corpo humano?",
     "resposta": "Paquiderme",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -9197,7 +9197,7 @@
   {
     "pergunta": "Qual desses animais é uma ave?",
     "resposta": "Pingüim",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -12923,7 +12923,7 @@
   {
     "pergunta": "Antepasto é o mesmo que:",
     "resposta": "Aperitivo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -13400,7 +13400,7 @@
   {
     "pergunta": "Desabitar é o mesmo que:",
     "resposta": "Despovoar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -13589,7 +13589,7 @@
   {
     "pergunta": "Decrescer é o mesmo que...",
     "resposta": "Diminuir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -13823,7 +13823,7 @@
   {
     "pergunta": "O que é retinol?",
     "resposta": "Vitamina a",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -13895,7 +13895,7 @@
   {
     "pergunta": "O cometa também pode ser chamado de ?",
     "resposta": "Estrela-de-rabo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14102,7 +14102,7 @@
   {
     "pergunta": "O que é estrogêno?",
     "resposta": "Hormônio",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14174,7 +14174,7 @@
   {
     "pergunta": "O magnetísmo refere-se à:",
     "resposta": "Ímã",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14192,7 +14192,7 @@
   {
     "pergunta": "Hipertensão refere-se a quê?",
     "resposta": "Pressão alta",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14237,7 +14237,7 @@
   {
     "pergunta": "Como é chamado o medicamento comercializado com o seu nome técnico?",
     "resposta": "Genérico",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14291,7 +14291,7 @@
   {
     "pergunta": "Cardiopata é o mesmo que:",
     "resposta": "Cardíaco",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14399,7 +14399,7 @@
   {
     "pergunta": "Em que se divide a traquéia no corpo humano?",
     "resposta": "Brônquios",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14597,7 +14597,7 @@
   {
     "pergunta": "A baleia é...",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14606,7 +14606,7 @@
   {
     "pergunta": "A água é composta por quantos átomos de hidrogênio?",
     "resposta": "Dois",
-    "categoria": "Diversos/Geral",
+    "categoria": "Ciências/Química",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14660,7 +14660,7 @@
   {
     "pergunta": "A unidade que mede a corrente elétrica é:",
     "resposta": "Ampère",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14669,7 +14669,7 @@
   {
     "pergunta": "A tireóide é:",
     "resposta": "Glândula",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14732,7 +14732,7 @@
   {
     "pergunta": "A luz solar converte esteróis em qual vitamina?",
     "resposta": "Vitamina d",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14750,7 +14750,7 @@
   {
     "pergunta": "A inflamação na mucosa que reveste a parte interna das pálpebras, chama-se:",
     "resposta": "Conjuntivite",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14759,7 +14759,7 @@
   {
     "pergunta": "A falta de qual vitamina, provoca o escorbuto?",
     "resposta": "Vitamina c",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14849,7 +14849,7 @@
   {
     "pergunta": "Qual animal não é classificado como crustáceo?",
     "resposta": "Ostra",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -14885,7 +14885,7 @@
   {
     "pergunta": "Qual dessas alternativas refere-se à um tipo de raiz?",
     "resposta": "Mandioca",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15074,7 +15074,7 @@
   {
     "pergunta": "O que é avitaminose?",
     "resposta": "Falta de vitaminas",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15137,7 +15137,7 @@
   {
     "pergunta": "Quem não enxerga bem de longe sofre de quê?",
     "resposta": "Miopia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15227,7 +15227,7 @@
   {
     "pergunta": "A cenoura é rica em qual tipo de vitamina?",
     "resposta": "A",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15245,7 +15245,7 @@
   {
     "pergunta": "A energia do núcleo do átomo é:",
     "resposta": "Uma energia nuclear",
-    "categoria": "Diversos/Geral",
+    "categoria": "Ciências/Química",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15380,7 +15380,7 @@
   {
     "pergunta": "Qual é o problema de visão que dificulta a leitura de perto?",
     "resposta": "Hipermetropia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15416,7 +15416,7 @@
   {
     "pergunta": "Acre é o mesmo que:",
     "resposta": "Azedo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15434,7 +15434,7 @@
   {
     "pergunta": "Qual é o satélite natural da terra?",
     "resposta": "Lua",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15524,7 +15524,7 @@
   {
     "pergunta": "Qual é a unidade de medida da intensidade do som?",
     "resposta": "Decibel",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15614,7 +15614,7 @@
   {
     "pergunta": "Qual desses animais não é um peixe?",
     "resposta": "Salamandra",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15623,7 +15623,7 @@
   {
     "pergunta": "Qual desses animais não é um peixe?",
     "resposta": "Lula",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15677,7 +15677,7 @@
   {
     "pergunta": "Qual é o nome do hormônio masculino?",
     "resposta": "Testosterona",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15848,7 +15848,7 @@
   {
     "pergunta": "Que tipo de animal é o antílope?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15866,7 +15866,7 @@
   {
     "pergunta": "Qual fenômeno atrai ou repele metais?",
     "resposta": "Magnetismo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -15875,7 +15875,7 @@
   {
     "pergunta": "Que tipo de animal é o dromedário?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -16001,7 +16001,7 @@
   {
     "pergunta": "Qual é o nome do estudo da estrutura geral do universo?",
     "resposta": "Cosmologia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -16010,7 +16010,7 @@
   {
     "pergunta": "Qual elemento do corpo humano responsável pela termorregulação?",
     "resposta": "Suor",
-    "categoria": "Diversos/Geral",
+    "categoria": "Anatomia/Fisiologia Humana",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -20006,7 +20006,7 @@
   {
     "pergunta": "Segundo a bíblia, quem foi o homem que viveu 969 anos?",
     "resposta": "Matusalém",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -20123,7 +20123,7 @@
   {
     "pergunta": "Uma pessoa com hipermetropia tem problema de:",
     "resposta": "Visão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -20177,7 +20177,7 @@
   {
     "pergunta": "Segundo a bíblia, quantos ladrões foram crucificados junto com jesus?",
     "resposta": "Dois",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23597,7 +23597,7 @@
   {
     "pergunta": "Pestanejar é o mesmo que:",
     "resposta": "Piscar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23615,7 +23615,7 @@
   {
     "pergunta": "Politeísmo refere-se a quê?",
     "resposta": "Vários deuses",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23633,7 +23633,7 @@
   {
     "pergunta": "Prejudicar é o mesmo que:",
     "resposta": "Anular",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23750,7 +23750,7 @@
   {
     "pergunta": "Protótipo é o mesmo que:",
     "resposta": "Modelo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23822,7 +23822,7 @@
   {
     "pergunta": "Magma é o mesmo que:",
     "resposta": "Lava",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -23912,7 +23912,7 @@
   {
     "pergunta": "Pantalha é o mesmo que:",
     "resposta": "Abajur",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24092,7 +24092,7 @@
   {
     "pergunta": "Em qual das frases a crase foi empregada corretamente?",
     "resposta": "Vestir-se à luís xv",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24146,7 +24146,7 @@
   {
     "pergunta": "O que é um bisão?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24299,7 +24299,7 @@
   {
     "pergunta": "O que se expandiu com a invenção da bússola?",
     "resposta": "Navegação",
-    "categoria": "Diversos/Geral",
+    "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24380,7 +24380,7 @@
   {
     "pergunta": "O que é ursa maior?",
     "resposta": "Constelação",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24425,7 +24425,7 @@
   {
     "pergunta": "O que é um siri?",
     "resposta": "Crustáceo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24443,7 +24443,7 @@
   {
     "pergunta": "Entoar é o mesmo que:",
     "resposta": "Cantar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24497,7 +24497,7 @@
   {
     "pergunta": "Geralmente, maratona é uma corrida...",
     "resposta": "A pé",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24542,7 +24542,7 @@
   {
     "pergunta": "Embargar é o mesmo que:",
     "resposta": "Impedir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24650,7 +24650,7 @@
   {
     "pergunta": "O bailarino mikhail barishnikov é de origem...",
     "resposta": "Russa",
-    "categoria": "Diversos/Geral",
+    "categoria": "Artes/Cultura/Cinema",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24659,7 +24659,7 @@
   {
     "pergunta": "Material bélico refere-se a:",
     "resposta": "Guerra",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -24740,7 +24740,7 @@
   {
     "pergunta": "No basquete, até quantos pontos pode valer uma cesta?",
     "resposta": "Três",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25262,7 +25262,7 @@
   {
     "pergunta": "Qual desses é um estilo de natação?",
     "resposta": "Borboleta",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25505,7 +25505,7 @@
   {
     "pergunta": "A paca é...",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25532,7 +25532,7 @@
   {
     "pergunta": "Ávido é o mesmo que:",
     "resposta": "Ansioso",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25595,7 +25595,7 @@
   {
     "pergunta": "Cancrejo é o mesmo que:",
     "resposta": "Caranguejo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25820,7 +25820,7 @@
   {
     "pergunta": "Canonizar é o mesmo que declarar:",
     "resposta": "Santo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -25901,7 +25901,7 @@
   {
     "pergunta": "Como se chama a constelação que possui a forma de uma cruz?",
     "resposta": "Cruzeiro do sul",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26000,7 +26000,7 @@
   {
     "pergunta": "Como eram chamados os reis do antigo egito?",
     "resposta": "Faraós",
-    "categoria": "Diversos/Geral",
+    "categoria": "História",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26009,7 +26009,7 @@
   {
     "pergunta": "Como é classificado o caranguejo?",
     "resposta": "Crustáceo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26153,7 +26153,7 @@
   {
     "pergunta": "Cosmo é uma palavra de origem grega que significa:",
     "resposta": "Universo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26171,7 +26171,7 @@
   {
     "pergunta": "Comparsa é o mesmo que:",
     "resposta": "Cúmplice",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26684,7 +26684,7 @@
   {
     "pergunta": "O que quer dizer a palavra quizila?",
     "resposta": "Rixa",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26909,7 +26909,7 @@
   {
     "pergunta": "Nas bússolas, a letra w significa:",
     "resposta": "Oeste",
-    "categoria": "Diversos/Geral",
+    "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -26963,7 +26963,7 @@
   {
     "pergunta": "Galináceo é um adjetivo que se refere à:",
     "resposta": "Galinha",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -27269,7 +27269,7 @@
   {
     "pergunta": "Xaveco é o mesmo que:",
     "resposta": "Barco velho",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -27638,7 +27638,7 @@
   {
     "pergunta": "Qual é o símbolo do ampère?",
     "resposta": "A",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -27818,7 +27818,7 @@
   {
     "pergunta": "Segundo a bíblia, quantas eram as tábuas dos dez mandamentos?",
     "resposta": "Duas",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -28547,7 +28547,7 @@
   {
     "pergunta": "A qual desses grupos pertence a ariranha?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -28736,7 +28736,7 @@
   {
     "pergunta": "Carpir é o mesmo que:",
     "resposta": "Capinar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -28799,7 +28799,7 @@
   {
     "pergunta": "A qual classe de animais pertencem os dinossauros?",
     "resposta": "Réptil",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -28925,7 +28925,7 @@
   {
     "pergunta": "Como é chamado um medicamento que age no local em que é aplicado?",
     "resposta": "Tópico",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -28988,7 +28988,7 @@
   {
     "pergunta": "Segundo a bíblia, quem foi a mãe de são joão batista?",
     "resposta": "Isabel",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29069,7 +29069,7 @@
   {
     "pergunta": "Hegemonia é o mesmo que:",
     "resposta": "Supremacia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29231,7 +29231,7 @@
   {
     "pergunta": "Guanaco é qual tipo de animal?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29285,7 +29285,7 @@
   {
     "pergunta": "Desgastar o solo é o mesmo que:",
     "resposta": "Erodir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29681,7 +29681,7 @@
   {
     "pergunta": "Categute é um fio usado em quê?",
     "resposta": "Cirurgia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29690,7 +29690,7 @@
   {
     "pergunta": "Casmurro é o mesmo que:",
     "resposta": "Teimoso",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29708,7 +29708,7 @@
   {
     "pergunta": "Banquisas refere-se à:",
     "resposta": "Gelos flutuantes",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -29987,7 +29987,7 @@
   {
     "pergunta": "Que governo é regido por representantes de deuses na terra?",
     "resposta": "Teocracia",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30203,7 +30203,7 @@
   {
     "pergunta": "Qual é a especialidade de um cartógrafo?",
     "resposta": "Mapas",
-    "categoria": "Diversos/Geral",
+    "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30239,7 +30239,7 @@
   {
     "pergunta": "Qual desses itens é o mais importante para o funcionamento de uma bússola?",
     "resposta": "Magnetismo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Física",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30545,7 +30545,7 @@
   {
     "pergunta": "Quem foram os fundadores de são luís, capital do maranhão?",
     "resposta": "Franceses",
-    "categoria": "Diversos/Geral",
+    "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30599,7 +30599,7 @@
   {
     "pergunta": "Rinoplastia é uma cirurgia feita em qual parte do corpo?",
     "resposta": "Nariz",
-    "categoria": "Diversos/Geral",
+    "categoria": "Medicina/Saúde",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30662,7 +30662,7 @@
   {
     "pergunta": "Que tipo de animal é o cachalote?",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30761,7 +30761,7 @@
   {
     "pergunta": "Sui generis é o mesmo que:",
     "resposta": "Peculiaridade",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30815,7 +30815,7 @@
   {
     "pergunta": "Qual museu foi fundado por assis chateaubriand?",
     "resposta": "Museu de arte de são paulo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Artes/Cultura/Cinema",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30914,7 +30914,7 @@
   {
     "pergunta": "Segundo a bíblia, qual é o nome do filho de noé?",
     "resposta": "Jafé",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -30932,7 +30932,7 @@
   {
     "pergunta": "Segundo a bíblia, qual desses era o antigo nome de abraão?",
     "resposta": "Abrão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -31229,7 +31229,7 @@
   {
     "pergunta": "Qual é o nome dado ao estudo de interpretação da bíblia?",
     "resposta": "Hermenêutica",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -31373,7 +31373,7 @@
   {
     "pergunta": "A locução adjetiva \"a granel\" refere-se a um produto:",
     "resposta": "Sem embalagem",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31418,7 +31418,7 @@
   {
     "pergunta": "Blefar é o mesmo que:",
     "resposta": "Enganar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31436,7 +31436,7 @@
   {
     "pergunta": "A expessão popular \"larápio\" é o mesmo que...",
     "resposta": "Ladrão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31454,7 +31454,7 @@
   {
     "pergunta": "Milenar refere-se a quê?",
     "resposta": "Um milênio",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31463,7 +31463,7 @@
   {
     "pergunta": "Levado da breca é o mesmo que:",
     "resposta": "Muito travesso",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31571,7 +31571,7 @@
   {
     "pergunta": "Atarraxar é o mesmo que:",
     "resposta": "Apertar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31589,7 +31589,7 @@
   {
     "pergunta": "Barganhar é o mesmo que:",
     "resposta": "Trocar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31625,7 +31625,7 @@
   {
     "pergunta": "Colisão é o mesmo que:",
     "resposta": "Batida",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31634,7 +31634,7 @@
   {
     "pergunta": "Censurar é o mesmo que:",
     "resposta": "Proibir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31688,7 +31688,7 @@
   {
     "pergunta": "Depredar é o mesmo que:",
     "resposta": "Destruir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31760,7 +31760,7 @@
   {
     "pergunta": "Qual é o adjetivo dado às rádios que operam sem autorização?",
     "resposta": "Pirata",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -31787,7 +31787,7 @@
   {
     "pergunta": "Perfurar é o mesmo que:",
     "resposta": "Cavar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32030,7 +32030,7 @@
   {
     "pergunta": "Monteiro lobato ficou famoso por ser:",
     "resposta": "Escritor",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32039,7 +32039,7 @@
   {
     "pergunta": "Montanhismo é o mesmo que?",
     "resposta": "Alpinismo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32057,7 +32057,7 @@
   {
     "pergunta": "Masmorra é o mesmo que:",
     "resposta": "Prisão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32111,7 +32111,7 @@
   {
     "pergunta": "Inodoro é o mesmo que:",
     "resposta": "Sem cheiro",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32129,7 +32129,7 @@
   {
     "pergunta": "Gruta é o mesmo que:",
     "resposta": "Caverna",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32156,7 +32156,7 @@
   {
     "pergunta": "Lustrar é o mesmo que:",
     "resposta": "Polir",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32255,7 +32255,7 @@
   {
     "pergunta": "Náusea é o mesmo que:",
     "resposta": "Enjôo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32282,7 +32282,7 @@
   {
     "pergunta": "O que quer dizer espontâneo?",
     "resposta": "Sincero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32579,7 +32579,7 @@
   {
     "pergunta": "O que é monarquia?",
     "resposta": "Forma de governo",
-    "categoria": "Diversos/Geral",
+    "categoria": "História",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -32939,7 +32939,7 @@
   {
     "pergunta": "O pintado é um peixe que vive em qual lugar?",
     "resposta": "Água doce",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -33020,7 +33020,7 @@
   {
     "pergunta": "O porco é um:",
     "resposta": "Mamífero",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -33758,7 +33758,7 @@
   {
     "pergunta": "Gustavo borges pratica qual modalidade esportiva?",
     "resposta": "Natação",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -33857,7 +33857,7 @@
   {
     "pergunta": "Flamingo refere-se a:",
     "resposta": "Ave",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -34388,7 +34388,7 @@
   {
     "pergunta": "Farda é o mesmo que:",
     "resposta": "Uniforme",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -35729,7 +35729,7 @@
   {
     "pergunta": "Qual é a parte da bíblia escrita após a vinda de jesus cristo?",
     "resposta": "Novo testamento",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -36017,7 +36017,7 @@
   {
     "pergunta": "Qual jogo olímpico utiliza cestas?",
     "resposta": "Basquete",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -37241,7 +37241,7 @@
   {
     "pergunta": "Qual destas bolas é a maior e mais pesada?",
     "resposta": "Bola de basquete",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -37655,7 +37655,7 @@
   {
     "pergunta": "Qual desses instrumentos é geralmente utilizado para observar corpos celestes?",
     "resposta": "Telescópio",
-    "categoria": "Diversos/Geral",
+    "categoria": "Astronomia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -37754,7 +37754,7 @@
   {
     "pergunta": "Como é chamado o jogo de tênis de mesa?",
     "resposta": "Pingue-pongue",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -38267,7 +38267,7 @@
   {
     "pergunta": "Como é chamado cada um dos curtos parágrafos da bíblia?",
     "resposta": "Versículo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Religião/Mitologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -38420,7 +38420,7 @@
   {
     "pergunta": "Como se inicia um jogo de vôlei?",
     "resposta": "Saque",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -38789,7 +38789,7 @@
   {
     "pergunta": "Como se chama a área do campo de basquete debaixo da tabela?",
     "resposta": "Garrafão",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39131,7 +39131,7 @@
   {
     "pergunta": "A bóia é um objeto geralmente utilizado na aprendizagem de qual modalidade esportiva?",
     "resposta": "Natação",
-    "categoria": "Diversos/Geral",
+    "categoria": "Esportes",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39140,7 +39140,7 @@
   {
     "pergunta": "Abarrotado é o mesmo que:",
     "resposta": "Cheio",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39203,7 +39203,7 @@
   {
     "pergunta": "Adoçado é o mesmo que:",
     "resposta": "Com açúcar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39230,7 +39230,7 @@
   {
     "pergunta": "Anoitecer deriva de qual palavra?",
     "resposta": "Noite",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39383,7 +39383,7 @@
   {
     "pergunta": "Anca é o mesmo que:",
     "resposta": "Quadril",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39410,7 +39410,7 @@
   {
     "pergunta": "Arrasta-pé é o mesmo que:",
     "resposta": "Baile",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39536,7 +39536,7 @@
   {
     "pergunta": "A letra mal feita e tortuosa é o mesmo que:",
     "resposta": "Garrancho",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39779,7 +39779,7 @@
   {
     "pergunta": "A palavra degelar é mesmo que:",
     "resposta": "Descongelar",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39788,7 +39788,7 @@
   {
     "pergunta": "A palavra celestial refere-se a:",
     "resposta": "Céu",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39914,7 +39914,7 @@
   {
     "pergunta": "Trivial é o mesmo que:",
     "resposta": "Comum",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39932,7 +39932,7 @@
   {
     "pergunta": "Tolice é o mesmo que?",
     "resposta": "Asneira",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -39977,7 +39977,7 @@
   {
     "pergunta": "Sovina é o mesmo que:",
     "resposta": "Avarento",
-    "categoria": "Diversos/Geral",
+    "categoria": "Literatura/Português",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -40877,7 +40877,7 @@
   {
     "pergunta": "Qual desses animais não é um peixe?",
     "resposta": "Lula",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -41525,7 +41525,7 @@
   {
     "pergunta": "Qual réptil comeu a mão do capitão gancho, na história do peter pan?",
     "resposta": "Crocodilo",
-    "categoria": "Diversos/Geral",
+    "categoria": "Biologia/Ecologia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"

@@ -417,71 +417,7 @@ export default function AdminPage() {
         </Card>
       </div>
 
-      <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Competições</h2>
-      <Card style={{ marginBottom: '2rem' }}>
-        <form onSubmit={handleCriarCompeticao} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
-          <div style={{ flex: 1 }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Nova Competição</label>
-            <input type="text" value={novaCompeticao} onChange={(e) => setNovaCompeticao(e.target.value)} placeholder="Ex: Fundamental II" />
-          </div>
-          <Button type="submit" style={{ background: 'var(--success)' }}>Criar</Button>
-        </form>
-      </Card>
-      
-      <div style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
-        {competicoes.map(comp => (
-          <Card key={comp.id} className="flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ margin: 0 }}>{comp.nome}</h3>
-              <p style={{ color: 'var(--text-muted)' }}>Turmas: {comp.turmas.map(t => t.nome).join(', ') || 'Nenhuma'}</p>
-            </div>
-            <Button onClick={() => handleDeleteCompeticao(comp.id)} style={{ background: 'var(--error)' }}>
-              Excluir
-            </Button>
-          </Card>
-        ))}
-        {competicoes.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma competição cadastrada.</p>}
-      </div>
-
-      <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Turmas Cadastradas</h2>
-      <div style={{ display: 'grid', gap: '1rem' }}>
-        {turmas.map(turma => (
-          <Card key={turma.id} className="flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ margin: 0 }}>{turma.nome}</h3>
-              <p style={{ color: 'var(--text-muted)' }}>{turma._count.alunos} alunos inscritos | {turma.pontuacao} pontos</p>
-              
-              <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                <div>
-                  <span style={{ fontWeight: 'bold' }}>Link de Inscrição:</span> <br/>
-                  <a href={`/turma/${turma.id}`} target="_blank" style={{ color: 'var(--secondary)' }}>
-                    {typeof window !== 'undefined' ? window.location.origin : ''}/turma/{turma.id}
-                  </a>
-                </div>
-                
-                <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + '/turma/' + turma.id : '')}&color=255-255-255&bgcolor=15-23-42`}
-                  alt={`QR Code ${turma.nome}`}
-                  width={64}
-                  height={64}
-                  style={{ borderRadius: '8px', border: '2px solid rgba(255,255,255,0.1)' }}
-                />
-              </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <Button variant="secondary" onClick={() => iniciarEdicaoTurma(turma)}>
-                Editar
-              </Button>
-              <Button onClick={() => handleDeleteTurma(turma.id)} style={{ background: 'var(--error)' }}>
-                Excluir
-              </Button>
-            </div>
-          </Card>
-        ))}
-        {turmas.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>}
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4rem', marginBottom: '1.5rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '3rem', marginBottom: '1.5rem' }}>
         <h2 style={{ margin: 0 }}>Banco de Perguntas e Categorias</h2>
         <Button onClick={handleCriarCategoria} style={{ background: 'var(--success)' }}>
           + Nova Categoria
@@ -629,6 +565,70 @@ export default function AdminPage() {
           );
         })}
         {categorias.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma pergunta cadastrada.</p>}
+      </div>
+
+      <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Competições</h2>
+      <Card style={{ marginBottom: '2rem' }}>
+        <form onSubmit={handleCriarCompeticao} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
+          <div style={{ flex: 1 }}>
+            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Nova Competição</label>
+            <input type="text" value={novaCompeticao} onChange={(e) => setNovaCompeticao(e.target.value)} placeholder="Ex: Fundamental II" />
+          </div>
+          <Button type="submit" style={{ background: 'var(--success)' }}>Criar</Button>
+        </form>
+      </Card>
+      
+      <div style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
+        {competicoes.map(comp => (
+          <Card key={comp.id} className="flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <h3 style={{ margin: 0 }}>{comp.nome}</h3>
+              <p style={{ color: 'var(--text-muted)' }}>Turmas: {comp.turmas.map(t => t.nome).join(', ') || 'Nenhuma'}</p>
+            </div>
+            <Button onClick={() => handleDeleteCompeticao(comp.id)} style={{ background: 'var(--error)' }}>
+              Excluir
+            </Button>
+          </Card>
+        ))}
+        {competicoes.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma competição cadastrada.</p>}
+      </div>
+
+      <h2 style={{ marginTop: '3rem', marginBottom: '1.5rem' }}>Turmas Cadastradas</h2>
+      <div style={{ display: 'grid', gap: '1rem' }}>
+        {turmas.map(turma => (
+          <Card key={turma.id} className="flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <h3 style={{ margin: 0 }}>{turma.nome}</h3>
+              <p style={{ color: 'var(--text-muted)' }}>{turma._count.alunos} alunos inscritos | {turma.pontuacao} pontos</p>
+              
+              <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                <div>
+                  <span style={{ fontWeight: 'bold' }}>Link de Inscrição:</span> <br/>
+                  <a href={`/turma/${turma.id}`} target="_blank" style={{ color: 'var(--secondary)' }}>
+                    {typeof window !== 'undefined' ? window.location.origin : ''}/turma/{turma.id}
+                  </a>
+                </div>
+                
+                <img 
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + '/turma/' + turma.id : '')}&color=255-255-255&bgcolor=15-23-42`}
+                  alt={`QR Code ${turma.nome}`}
+                  width={64}
+                  height={64}
+                  style={{ borderRadius: '8px', border: '2px solid rgba(255,255,255,0.1)' }}
+                />
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <Button variant="secondary" onClick={() => iniciarEdicaoTurma(turma)}>
+                Editar
+              </Button>
+              <Button onClick={() => handleDeleteTurma(turma.id)} style={{ background: 'var(--error)' }}>
+                Excluir
+              </Button>
+            </div>
+          </Card>
+        ))}
+        {turmas.length === 0 && <p style={{ color: 'var(--text-muted)' }}>Nenhuma turma cadastrada.</p>}
       </div>
     </div>
   );

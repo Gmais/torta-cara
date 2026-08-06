@@ -2688,15 +2688,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes elementos químicos está presente no sal de cozinha?",
-    "resposta": "Cloro",
-    "categoria": "Química",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Dificil"
-    ]
-  },
-  {
     "pergunta": "O mesocarpo corresponde a qual parte do fruto?",
     "resposta": "Polpa",
     "categoria": "Diversos/Geral",
@@ -3762,15 +3753,6 @@
     "pergunta": "Quais dessas cidades foram importantes cidades-estados na grécia antiga?",
     "resposta": "Atenas e esparta",
     "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Dificil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes presidentes norte-americanos emancipou os escravos de seu país?",
-    "resposta": "Abraham lincoln",
-    "categoria": "História",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Dificil"
@@ -9186,26 +9168,8 @@
     ]
   },
   {
-    "pergunta": "Qual destes alimentos não é derivado do leite?",
-    "resposta": "Batata",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual desses itens não é um dos cinco sentidos humanos?",
     "resposta": "Cardíaco",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes alimentos não é uma fruta?",
-    "resposta": "Salsa",
     "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -9303,15 +9267,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes não é um fruto?",
-    "resposta": "Aipo",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual é a grande ave que ingere pedra?",
     "resposta": "Avestruz",
     "categoria": "Diversos/Geral",
@@ -9402,96 +9357,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes nomes também é dado aos fungos?",
-    "resposta": "Mofo",
-    "categoria": "Biologia/Ecologia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes materiais flutua na água?",
-    "resposta": "Bóia",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais tem o pescoço mais comprido?",
-    "resposta": "Girafa",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais pode regenerar partes do corpo?",
-    "resposta": "Lagartixa",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais não voa?",
-    "resposta": "Mico",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais não é um representante da fauna brasileira?",
-    "resposta": "Canguru",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais não é um macaco?",
-    "resposta": "Flamingo",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é venenoso?",
-    "resposta": "Escorpião",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é um típico habitante das cavernas?",
-    "resposta": "Morcego",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é incapaz de ver e ouvir?",
-    "resposta": "Minhoca",
-    "categoria": "Biologia/Ecologia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual dos cinco sentidos é o responsável pelo sabor?",
     "resposta": "Paladar",
     "categoria": "Diversos/Geral",
@@ -9546,62 +9411,8 @@
     ]
   },
   {
-    "pergunta": "Qual destes países possui como língua oficial o português?",
-    "resposta": "Angola",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes países não faz parte do mercosul?",
-    "resposta": "Canadá",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes países não faz parte da união européia?",
-    "resposta": "México",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes países faz fronteira com o oceano atlântico?",
-    "resposta": "Brasil",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes estados brasileiros está situado na região sul?",
-    "resposta": "Paraná",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual é a capital do amapá?",
     "resposta": "Macapá",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes estados não faz parte da região nordeste?",
-    "resposta": "Rio grande do sul",
     "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -12689,15 +12500,6 @@
   {
     "pergunta": "Qual dessas figuras geométricas não encontramos em nossa bandeira nacional?",
     "resposta": "Triângulo",
-    "categoria": "Matemática",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes números é ímpar?",
-    "resposta": "75",
     "categoria": "Matemática",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -15900,24 +15702,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes animais é um mamífero?",
-    "resposta": "Paca",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é vertebrado?",
-    "resposta": "Passarinho",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
     "pergunta": "Qual doença é conhecida como tosse comprida?",
     "resposta": "Coqueluche",
     "categoria": "Medicina/Saúde",
@@ -16667,24 +16451,6 @@
   {
     "pergunta": "Qual desses países não é banhado pelo mar?",
     "resposta": "Paraguai",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes estados não pertence à região nordeste?",
-    "resposta": "Acre",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes países faz parte do reino unido?",
-    "resposta": "Inglaterra",
     "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -17540,15 +17306,6 @@
   {
     "pergunta": "Qual cidade inglesa é referência no cálculo do horário mundial?",
     "resposta": "Greenwich",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes países tem como autoridade máxima o líder religioso?",
-    "resposta": "Irã",
     "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -21543,15 +21300,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes cientistas se dedicou ao estudo da álgebra e trigonometria?",
-    "resposta": "François viete",
-    "categoria": "Matemática",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
     "pergunta": "Como é chamado um elemento constituinte de um conjunto?",
     "resposta": "Pertinência",
     "categoria": "Matemática",
@@ -21626,15 +21374,6 @@
   {
     "pergunta": "O ciêntista renê descrates se dedicou ao estudo da:",
     "resposta": "Filosôfia e matemática",
-    "categoria": "Matemática",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes números não é primo?",
-    "resposta": "1",
     "categoria": "Matemática",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -25008,15 +24747,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes instrumentos não é comum num grupo de rock?",
-    "resposta": "Gaita de foles",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
     "pergunta": "O que significa um carro 4x4 ?",
     "resposta": "Tração nas quatro rodas",
     "categoria": "Diversos/Geral",
@@ -25080,44 +24810,8 @@
     ]
   },
   {
-    "pergunta": "Qual destes músicos é saxofonista?",
-    "resposta": "Kenny g",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
     "pergunta": "Qual é a cor da estola usada pelos padres durante a quaresma?",
     "resposta": "Roxa",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes foi um escultor francês?",
-    "resposta": "Auguste rodin",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes cartões postais se localiza no japão?",
-    "resposta": "Monte fuji",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é símbolo de força e dignidade?",
-    "resposta": "Águia",
     "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -26001,15 +25695,6 @@
     "pergunta": "Qual é a 3ª nota musical da clave de sol?",
     "resposta": "Mi",
     "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes grupos nunca se apresentou no brasil?",
-    "resposta": "Beatles",
-    "categoria": "Geografia",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -27033,15 +26718,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes é um jogo de cartas?",
-    "resposta": "Tranca",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
     "pergunta": "Quem é o autor da \"divina comédia\"?",
     "resposta": "Dante alighieri",
     "categoria": "Literatura/Português",
@@ -27099,15 +26775,6 @@
     "pergunta": "Onde se originou o esporte rodeio?",
     "resposta": "América do norte",
     "categoria": "Esportes",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes é um músico austríaco?",
-    "resposta": "Strauss",
-    "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -27180,15 +26847,6 @@
     "pergunta": "Quais são as cores da bandeira do canadá?",
     "resposta": "Vermelha e branca",
     "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Medio"
-    ]
-  },
-  {
-    "pergunta": "Qual destes é um peixe de água salgada?",
-    "resposta": "Badejo",
-    "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Medio"
@@ -31488,24 +31146,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes países não tem o alemão como língua oficial?",
-    "resposta": "Dinamarca",
-    "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Dificil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes pintores é um artista do século xx?",
-    "resposta": "Picasso",
-    "categoria": "História",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Dificil"
-    ]
-  },
-  {
     "pergunta": "Qual é a altitude do pão de açúcar?",
     "resposta": "395 metros",
     "categoria": "Diversos/Geral",
@@ -32055,15 +31695,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes é um sinônimo de cabeça?",
-    "resposta": "Cachola",
-    "categoria": "Literatura/Português",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual dessas palavras não está escrita corretamente?",
     "resposta": "Giló",
     "categoria": "Literatura/Português",
@@ -32265,15 +31896,6 @@
     "pergunta": "Qual é o coletivo de estrelas?",
     "resposta": "Constelação",
     "categoria": "Literatura/Português",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes meios de comunicação possui linguagem escrita?",
-    "resposta": "Jornal",
-    "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -36411,15 +36033,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes faz parte do grupo de instrumentos de percussão?",
-    "resposta": "Bateria",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual item é utilizado numa motocicleta comum?",
     "resposta": "Capacete",
     "categoria": "Diversos/Geral",
@@ -36872,15 +36485,6 @@
   {
     "pergunta": "Qual animal representa o signo de câncer no zodíaco?",
     "resposta": "Caranguejo",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes animais é ovíparo?",
-    "resposta": "Tartaruga",
     "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
@@ -37527,24 +37131,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes esportes o praticante necessita de luvas especiais?",
-    "resposta": "Boxe",
-    "categoria": "Esportes",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes é um esporte náutico?",
-    "resposta": "Iatismo",
-    "categoria": "Esportes",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual destas não é uma nota musical?",
     "resposta": "Dé",
     "categoria": "Diversos/Geral",
@@ -37575,15 +37161,6 @@
     "pergunta": "Qual destas escolas de samba não é do rio de janeiro?",
     "resposta": "Vai-vai",
     "categoria": "Geografia",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes exames deve ser feito pelo candidato a motorista?",
-    "resposta": "Oftalmológico",
-    "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [
       "Facil"
@@ -37734,15 +37311,6 @@
     ]
   },
   {
-    "pergunta": "Qual destes esportes utiliza maior número de jogadores ao mesmo tempo?",
-    "resposta": "Futebol",
-    "categoria": "Esportes",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
     "pergunta": "Qual documento é obrigatório para que as pessoas exerçam atividades econômicas?",
     "resposta": "Cadastro de pessoa física",
     "categoria": "Física",
@@ -37754,69 +37322,6 @@
   {
     "pergunta": "Qual desses objetos serve para fritar alimentos?",
     "resposta": "Frigideira",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes personagens não usa uma capa?",
-    "resposta": "Homem-aranha",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes objetos simboliza a justiça?",
-    "resposta": "Balança",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes objetos não é usado pela manicure?",
-    "resposta": "Pente",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes nomes é um tipo de chapéu mexicano?",
-    "resposta": "Sombrero",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes não é um signo do zodíaco?",
-    "resposta": "Camarão",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes não é um prato da culinária japonesa?",
-    "resposta": "Risoto",
-    "categoria": "Diversos/Geral",
-    "nomeProfessor": "Sistema",
-    "dificuldades": [
-      "Facil"
-    ]
-  },
-  {
-    "pergunta": "Qual destes não é um brinquedo típico de parques infantis?",
-    "resposta": "Trampolim",
     "categoria": "Diversos/Geral",
     "nomeProfessor": "Sistema",
     "dificuldades": [

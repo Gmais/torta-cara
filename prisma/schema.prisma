@@ -34,6 +34,7 @@ model Pergunta {
   editadoPor    String?   // Nome de quem fez a última edição
   editadoEm     DateTime?
   createdAt     DateTime  @default(now())
+  destaque      Boolean   @default(false) // marca perguntas migradas de Diversos/Geral: ficam amarelas e no topo da categoria
 }
 
 // Registro de perguntas excluídas do banco, para saber quem excluiu o quê.

@@ -25,6 +25,7 @@ interface Pergunta {
   resposta: string;
   categoria: string;
   dificuldades: string[];
+  destaque: boolean;
 }
 
 interface EditDraft {
@@ -37,7 +38,7 @@ interface EditDraft {
 const NIVEIS_DIFICULDADE = ['Facil', 'Moderado', 'Dificil'] as const;
 const NIVEL_LABEL: Record<string, string> = { Facil: 'Fácil', Moderado: 'Moderado', Dificil: 'Difícil' };
 const NIVEL_COR: Record<string, string> = { Facil: 'var(--success)', Moderado: '#f59e0b', Dificil: 'var(--error)' };
-const CATEGORIA_COR: Record<string, string> = { 'Diversos/Geral': '#facc15' };
+const COR_DESTAQUE = '#facc15';
 
 export default function AdminPage() {
   const [autenticado, setAutenticado] = useState(false);
@@ -472,7 +473,7 @@ export default function AdminPage() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {categorias.map(cat => {
-          const catPerguntas = categoriasMap[cat] || [];
+          const catPerguntas = [...(categoriasMap[cat] || [])].sort((a, b) => Number(b.destaque) - Number(a.destaque));
           const isExpanded = categoriasExpandidas.includes(cat);
           
           return (
@@ -556,7 +557,7 @@ export default function AdminPage() {
                     return (
                       <div key={p.id} style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{ flex: 1, paddingRight: '1rem' }}>
-                          <p style={{ fontWeight: 'bold', marginBottom: '0.25rem', color: CATEGORIA_COR[p.categoria] }}>{p.pergunta}</p>
+                          <p style={{ fontWeight: 'bold', marginBottom: '0.25rem', color: p.destaque ? COR_DESTAQUE : undefined }}>{p.pergunta}</p>
                           <p style={{ color: 'var(--success)' }}>R: {p.resposta}</p>
                           <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
                             {NIVEIS_DIFICULDADE.map(nivel => (

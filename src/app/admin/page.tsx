@@ -29,8 +29,10 @@ interface Pergunta {
   conferido: boolean;
 }
 
+const CATEGORIAS_PARA_CONFERIR = ['Diversos/Geral', 'Geografia', 'Literatura/Português', 'Matemática'];
+
 function precisaConferencia(p: Pergunta): boolean {
-  return (p.categoria === 'Diversos/Geral' || p.destaque) && !p.conferido;
+  return (CATEGORIAS_PARA_CONFERIR.includes(p.categoria) || p.destaque) && !p.conferido;
 }
 
 interface EditDraft {

@@ -29,7 +29,7 @@ interface Pergunta {
   conferido: boolean;
 }
 
-const CATEGORIAS_PARA_CONFERIR = ['Diversos/Geral', 'Geografia', 'Literatura/Português', 'Matemática'];
+const CATEGORIAS_PARA_CONFERIR = ['Diversos/Geral', 'Geografia', 'Literatura/Português', 'Matemática', 'História'];
 
 function precisaConferencia(p: Pergunta): boolean {
   return (CATEGORIAS_PARA_CONFERIR.includes(p.categoria) || p.destaque) && !p.conferido;
